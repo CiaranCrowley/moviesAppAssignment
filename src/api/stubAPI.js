@@ -1,14 +1,14 @@
 class StubAPI {
     constructor() {
-        this.favoriteMovies = [], this.watchList = [];
+        this.favoriteMovies = [];
     }
 
     add(movie) {
-        this.favoriteMovies.push(movie), this.watchList.push(movie);
+        this.favoriteMovies.push(movie);
     }
 
     getAll() {
-        return this.favoriteMovies, this.watchList;
+        return this.favoriteMovies;
     }
 }
 
