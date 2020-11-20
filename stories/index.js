@@ -154,10 +154,6 @@ storiesOf("Movie Details Page/MovieHeader", module)
   ))
   .add("default", () => <MovieHeader movie={sample} />);
 
-// storiesOf("Upcoming Movies Details Page/UpcomingMovies", module).add("default", () => (
-//   <UpcomingMovies movie={sample} />
-// ));
-
 storiesOf("Upcoming Movies Details Page/Upcoming Movies", module)
   .addDecorator(story => (
       <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
