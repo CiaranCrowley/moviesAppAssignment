@@ -19,7 +19,7 @@
 .env
 
 cypress.env.json
-
+debug.log
 
 
 npm-debug.log*

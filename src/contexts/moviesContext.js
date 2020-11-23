@@ -20,7 +20,7 @@ const reducer = (state, action) => {
         movies: [...state.movies],
       };
     case "load":
-      return { movies: action.payload.movies, upcoming: [...state.upcoming] };
+      return { movies: action.payload.movies, upcoming: [...state.upcoming], popular: [...state.popular] };
     case "load-upcoming":
       return { upcoming: action.payload.movies, movies: [...state.movies] };
     case "load-popular-movies":
