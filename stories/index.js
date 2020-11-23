@@ -12,6 +12,7 @@ import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
 import UpcomingMovies from '../src/components/upcomingMovies';
+import PopularMoviesPage from "../src/pages/popularMovies";
 
 const sample = {
   adult: false,
@@ -169,3 +170,19 @@ storiesOf("Upcoming Movies Details Page/Upcoming Movies", module)
       />
     );
   });
+
+  storiesOf("Popular Movies Details Page/Popular Movies", module)
+    .addDecorator(story => (
+      <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+    ))
+    .add("defaule", () => {
+      const movies = [sample, sample, sample, sample, sample];
+      return(
+        <PopularMoviesPage
+        movies={movies}
+        action={movie => (
+          <button className="btn w-100 btn-primary">Test</button>
+        )}
+        />
+      );
+    });
