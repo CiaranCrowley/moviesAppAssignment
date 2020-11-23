@@ -5,14 +5,6 @@ import {MoviesContext} from '../contexts/moviesContext'
 
 const PopularMoviesPage = () => {
     const context = useContext(MoviesContext);
-    // const popularMovies = context.popular.filter((m) => {
-    //     return !("popular" in m);
-    // });
-
-    // const popularMovies = context.filter((m) => {
-    //     return !("popular" in m);
-    // });
-
     const popularMovies = context.popular.filter((m) => {
         return !("popular" in m);
     });
