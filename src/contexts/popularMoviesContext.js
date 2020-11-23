@@ -12,12 +12,6 @@ const reducer = (state, action) => {
         ),
         movies: [...state.movies],
       };
-      // case "add-popular":
-      //   return {
-      //     popular: state.popular.map((m) => 
-      //       m.id === action.payload.movie.id ? { ...m, popular: true }: m
-      //     ),
-      //   };
     case "load":
       return { movies: action.payload.movies, popular: [...state.popular] };
     case "load-popularMovies":

@@ -19,18 +19,10 @@ const reducer = (state, action) => {
         ),
         movies: [...state.movies],
       };
-      // case "add-popular":
-      //   return {
-      //     popular: state.popular.map((m) => 
-      //       m.id === action.payload.movie.id ? { ...m, popular: true }: m
-      //     ),
-      //   };
     case "load":
       return { movies: action.payload.movies, upcoming: [...state.upcoming] };
     case "load-upcoming":
       return { upcoming: action.payload.movies, movies: [...state.movies] };
-    // case "load-popularMovies":
-    //   return { popular: action.payload.movies, movies: [...state.movies] };
     case "add-review":
       return {
         movies: state.movies.map((m) =>
@@ -77,19 +69,11 @@ const MoviesContextProvider = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect(() => {
-  //   getPopularMovies().then((movies) => {
-  //     dispatch({type: "load-popularMovies", payload: { movies } });
-  //   });
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
   return (
     <MoviesContext.Provider
       value={{
         movies: state.movies,
         upcoming: state.upcoming,
-        //popular: state.popular,
         addToFavorites: addToFavorites,
         addToWatchlist: addToWatchlist,
         addReview: addReview,
