@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
 import PageTemplate from "../components/templateMovieListPage";
 import AddReviewButton from '../components/buttons/addReview'
-import {MoviesContext} from '../contexts/moviesContext'
+import {PopularMoviesContext} from '../contexts/popularMoviesContext'
 
 const PopularMoviesPage = () => {
-    const context = useContext(MoviesContext);
+    const context = useContext(PopularMoviesContext);
     const popularMovies = context.popular.filter((m) => {
         return !("popular" in m);
     });

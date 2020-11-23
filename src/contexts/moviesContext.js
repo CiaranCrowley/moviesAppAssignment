@@ -26,11 +26,11 @@ const reducer = (state, action) => {
       //     ),
       //   };
     case "load":
-      return { movies: action.payload.movies, popular: [...state.popular], upcoming: [...state.upcoming] };
+      return { movies: action.payload.movies, upcoming: [...state.upcoming] };
     case "load-upcoming":
       return { upcoming: action.payload.movies, movies: [...state.movies] };
-    case "load-popularMovies":
-      return { popular: action.payload.movies, movies: [...state.movies] };
+    // case "load-popularMovies":
+    //   return { popular: action.payload.movies, movies: [...state.movies] };
     case "add-review":
       return {
         movies: state.movies.map((m) =>
@@ -46,7 +46,7 @@ const reducer = (state, action) => {
 };
 
 const MoviesContextProvider = (props) => {
-  const [state, dispatch] = useReducer(reducer, { movies: [], popular: [], upcoming: [] });
+  const [state, dispatch] = useReducer(reducer, { movies: [], upcoming: [] });
 
   const addToFavorites = (movieId) => {
     const index = state.movies.map((m) => m.id).indexOf(movieId);
@@ -77,19 +77,19 @@ const MoviesContextProvider = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    getPopularMovies().then((movies) => {
-      dispatch({type: "load-popularMovies", payload: { movies } });
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   getPopularMovies().then((movies) => {
+  //     dispatch({type: "load-popularMovies", payload: { movies } });
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <MoviesContext.Provider
       value={{
         movies: state.movies,
         upcoming: state.upcoming,
-        popular: state.popular,
+        //popular: state.popular,
         addToFavorites: addToFavorites,
         addToWatchlist: addToWatchlist,
         addReview: addReview,
