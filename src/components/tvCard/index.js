@@ -9,30 +9,30 @@ const TvCard = ({show, action}) => {
   return (
     <div className="col-sm-3">
       <div className="card  bg-white">
-      <Link to={`/tv/${tv.id}`}>
+      <Link to={`/tv/${show.id}`}>
         <img
           className="card-img-tag center "
-          alt={tv.name}
+          alt={show.name}
           src={
-            tv.poster_path
-              ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
+            show.poster_path
+              ? `https://image.tmdb.org/t/p/w500/${show.poster_path}`
               : "./show-poster-placeholder.png"
           }
         />
         </Link>
         <div className="card-body">
-          <h4 className="card-name ">{tv.name}</h4>
+          <h4 className="card-name ">{show.name}</h4>
           <p>
             <FontAwesomeIcon icon={["fas", "calendar"]} />
-            <span> {tv.first_air_date}</span>
+            <span> {show.first_air_date}</span>
           </p>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {tv.vote_count}</span>
+            <span> {show.vote_count}</span>
           </p>
         </div>
         <div className="card-footer">
-           {action(tv)}
+           {action(show)}
         </div>
       </div>
     </div>
