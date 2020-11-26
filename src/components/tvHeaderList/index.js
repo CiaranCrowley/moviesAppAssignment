@@ -1,11 +1,11 @@
 import React from "react";
 
-const TvHeader = ({ title, numTvShows }) => {
+const TvHeader = ({ name, numTvShows }) => {
   return (
     <div className="row">
       <div className="col-md-6 offset-4">
         <h2>
-          {`${title}  `}
+          {`${name}  `}
           <span className="badge badge-pill badge-success">{numTvShows}</span>
         </h2>
       </div>
