@@ -1,12 +1,12 @@
-// import React from "react";
-// import Movie from "../movieCard/";
-// import "./movieList.css";
+import React from "react";
+import Tv from "../tvCard/";
+import "./tvList.css";
 
-// const MovieList = ({movies, action}) => {
-//   const movieCards = movies.map(m => (
-//     <Movie key={m.id} movie={m} action={action} />
-//   ));
-//   return <div className="row movies bg-info">{movieCards}</div>;
-// };
+const TvList = ({tv, action}) => {
+  const tvCards = tv.map(t => (
+    <Tv key={t.id} tv={t} action={action} />
+  ));
+  return <div className="row movies bg-info">{tvCards}</div>;
+};
 
-// export default MovieList;
+export default TvList;
