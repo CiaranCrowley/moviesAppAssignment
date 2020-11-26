@@ -13,17 +13,22 @@ import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import WatchListPage from "./pages/watchListPage";
 import PopularMoviesPage from "./pages/popularMovies";
-import PopularMoviesContextProvider from "./contexts/popularMoviesContext"
+import PopularMoviesContextProvider from "./contexts/popularMoviesContext";
+import LatestMoviesContextProvider from "./contexts/latestMoviesContext";
+import TvShowsPage from "./pages/tvShowsPage";
+import TvShowsContextProvider from "./contexts/tvContext";
 
 const App = () => {
   return (
-      <BrowserRouter>
-        <div className="jumbotron">
-          <SiteHeader />      
-          <div className="container-fluid">
+    <BrowserRouter>
+      <div className="jumbotron">
+        <SiteHeader />      
+        <div className="container-fluid">
           <MoviesContextProvider>
             <PopularMoviesContextProvider>
-              <GenresContextProvider>
+              <LatestMoviesContextProvider>
+                <TvShowsContextProvider>
+                  <GenresContextProvider>
                     <Switch>
                       <Route exact path="/reviews/form" component={AddMovieReviewPage} />
                       <Route path="/reviews/:id" component={MovieReviewPage} />
@@ -31,16 +36,19 @@ const App = () => {
                       <Route exact path="/movies/watchList" component={WatchListPage} />
                       <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
                       <Route exact path="/movies/popular" component={PopularMoviesPage} />
+                      <Route exact path="/tv" component={TvShowsPage} />
                       <Route path="/movies/:id" component={MoviePage} />
                       <Route path="/" component={HomePage} />
                       <Redirect from="*" to="/" />
                     </Switch>
-                </GenresContextProvider>
-              </PopularMoviesContextProvider>
-            </MoviesContextProvider>     
-          </div>
-         </div>
-      </BrowserRouter>
+                  </GenresContextProvider>
+                </TvShowsContextProvider>
+              </LatestMoviesContextProvider>
+            </PopularMoviesContextProvider>
+          </MoviesContextProvider>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 };
 

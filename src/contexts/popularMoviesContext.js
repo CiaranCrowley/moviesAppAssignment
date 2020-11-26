@@ -5,13 +5,6 @@ export const PopularMoviesContext = createContext(null);
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "add-favorite":
-      return {
-        movies: state.movies.map((m) =>
-          m.id === action.payload.movie.id ? { ...m, favorite: true } : m
-        ),
-        movies: [...state.movies],
-      };
     case "load":
       return { movies: action.payload.movies, popular: [...state.popular] };
     case "load-popularMovies":
@@ -23,15 +16,6 @@ const reducer = (state, action) => {
 
 const PopularMoviesContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, { movies: [], popular: [] });
-
-  const addToFavorites = (movieId) => {
-    const index = state.movies.map((m) => m.id).indexOf(movieId);
-    dispatch({ type: "add-favorite", payload: { movie: state.movies[index] } });
-  };
-
-  const addReview = (movie, review) => {
-    dispatch({ type: "add-review", payload: { movie, review } });
-  };
 
   useEffect(() => {
     getMovies().then((movies) => {
@@ -52,8 +36,6 @@ const PopularMoviesContextProvider = (props) => {
       value={{
         movies: state.movies,
         popular: state.popular,
-        addToFavorites: addToFavorites,
-        addReview: addReview,
       }}
     >
       {props.children}
