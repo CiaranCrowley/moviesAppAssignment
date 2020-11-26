@@ -1,37 +1,37 @@
-// import React, { useState } from "react";
-// import Header from "../headerMovieList";
-// import MovieList from "../movieList";
-// import FilterControls from "../filterControls";
+import React, { useState } from "react";
+import TvHeader from "../tvHeaderList";
+import TvList from "../tvList";
+import FilterControls from "../filterControls";
 
-// const MovieListPageTemplate = ({movies, title, action }) => {
-//   const [nameFilter, setNameFilter] = useState("");
-//   const [genreFilter, setGenreFilter] = useState("0");
-//   const genre = Number(genreFilter)
-//   let displayedMovies = movies
-//     .filter(m => {
-//       return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
-//     })
-//     .filter(m => {
-//       return  genre > 0
-//         ? m.genre_ids.includes(Number(genreFilter))
-//         : true;
-//     });
+const TvListPageTemplate = ({tvShows, name, action }) => {
+  const [nameFilter, setNameFilter] = useState("");
+  const [genreFilter, setGenreFilter] = useState("0");
+  const genre = Number(genreFilter)
+  let displayedTvShows = tvShows
+    .filter(t => {
+      return t.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+    })
+    .filter(t => {
+      return  genre > 0
+        ? t.genre_ids.includes(Number(genreFilter))
+        : true;
+    });
 
-//   const handleChange = (type, value) => {
-//     if (type === "name") setNameFilter(value);
-//     else setGenreFilter(value);
-//   };
+  const handleChange = (type, value) => {
+    if (type === "name") setNameFilter(value);
+    else setGenreFilter(value);
+  };
 
-//   return (
-//     <>
-//       <Header title={title} numMovies={displayedMovies.length} />
-//       <FilterControls onUserInput={handleChange} numMovies={displayedMovies.length}/>
-//       <MovieList
-//         action={action}
-//         movies={displayedMovies}
-//       ></MovieList>
-//     </>
-//   );
-// };
+  return (
+    <>
+      <TvHeader name={name} numTvShows={displayedTvShows.length} />
+      <FilterControls onUserInput={handleChange} numTvShows={displayedTvShows.length}/>
+      <TvList
+        action={action}
+        tvShows={displayedTvShows}
+      ></TvList>
+    </>
+  );
+};
 
-// export default MovieListPageTemplate ;
+export default TvListPageTemplate ;

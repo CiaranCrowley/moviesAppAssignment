@@ -1,27 +1,27 @@
-// import React from "react";
-// import MovieHeader from '../headerMovie'
-// import "./moviePage.css";
+import React from "react";
+import TvHeader from '../tvHeader'
+import "./tvPage.css";
 
-// const TemplateMoviePage = ({ movie, children }) => {
-//   return (
-//     <>
-//       <MovieHeader movie={movie} />
-//       <div className="row">
-//         <div className="col-3">
-//           <img
-//             src={
-//               movie.poster_path
-//                 ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-//                 : "./film-poster-placeholder.png"
-//             }
-//             className="movie"
-//             alt={movie.title}
-//           />
-//         </div>
-//         <div className="col-9">{children}</div>
-//       </div>
-//     </>
-//   );
-// };
+const TemplateTvPage = ({ tv, children }) => {
+  return (
+    <>
+      <TvHeader tv={tv} />
+      <div className="row">
+        <div className="col-3">
+          <img
+            src={
+                tv.poster_path
+                ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
+                : "./tv-poster-placeholder.png"
+            }
+            className="tv"
+            alt={tv.name}
+          />
+        </div>
+        <div className="col-9">{children}</div>
+      </div>
+    </>
+  );
+};
 
-// export default TemplateMoviePage;
+export default TemplateTvPage;
