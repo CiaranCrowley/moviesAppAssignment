@@ -53,3 +53,27 @@ export const getMovies = () => {
     .then(res => res.json())
     .then(json => json.results);
   };
+  
+export const getTvShows = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
+
+  export const getTvShow = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    ).then(res => res.json());
+  };
+
+  export const getTvGenres = () => {
+    return fetch(
+      "hthttps://api.themoviedb.org/3/genre/tv/list?api_key" +
+        process.env.REACT_APP_TMDB_KEY +
+        "language=en-US"
+    )
+      .then(res => res.json())
+      .then(json => json.genres);
+  };
