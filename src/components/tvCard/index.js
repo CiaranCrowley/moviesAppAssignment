@@ -4,35 +4,35 @@ import "./tvCard.css";
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const TvCard = ({show, action}) => {
+const TvCard = ({tv, action}) => {
 
   return (
     <div className="col-sm-3">
       <div className="card  bg-white">
-      <Link to={`/tv/${show.id}`}>
+      <Link to={`/tv/${tv.id}`}>
         <img
           className="card-img-tag center "
-          alt={show.name}
+          alt={tv.name}
           src={
-            show.poster_path
-              ? `https://image.tmdb.org/t/p/w500/${show.poster_path}`
+            tv.poster_path
+              ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
               : "./show-poster-placeholder.png"
           }
         />
         </Link>
         <div className="card-body">
-          <h4 className="card-name ">{show.name}</h4>
+          <h4 className="card-name ">{tv.name}</h4>
           <p>
             <FontAwesomeIcon icon={["fas", "calendar"]} />
-            <span> {show.first_air_date}</span>
+            <span> {tv.first_air_date}</span>
           </p>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {show.vote_count}</span>
+            <span> {tv.vote_count}</span>
           </p>
         </div>
         <div className="card-footer">
-           {action(show)}
+           {action(tv)}
         </div>
       </div>
     </div>

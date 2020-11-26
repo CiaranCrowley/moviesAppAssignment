@@ -6,7 +6,7 @@ export const TvShowsContext = createContext(null);
 const reducer = (state, action) => {
     switch (action.type) {
       case "load":
-        return { tvShows: action.payload.tvShows, tvShows: [...state.tvShows] };
+        return { tvShows: action.payload.tvShows };
       default:
         return state;
     }
