@@ -18,7 +18,7 @@ import TvShowsPage from "./pages/tvShowsPage";
 import TvShowsContextProvider from "./contexts/tvContext";
 import TvPage from './pages/tvDetailsPage';
 import TvReviewPage from "./pages/tvReviewPage";
-
+import TvAiringTodayPage from "./pages/tvAiringTodayPage";
 
 const App = () => {
   return (
@@ -39,6 +39,7 @@ const App = () => {
                     <Route exact path="/movies/popular" component={PopularMoviesPage} />
                     <Route exact path="/tv" component={TvShowsPage} />
                     <Route exact path="/tvReviews/:id" component={TvReviewPage} />
+                    <Route exact path="/tv/airing_today" component={TvAiringTodayPage} />
                     <Route path="/movies/:id" component={MoviePage} />
                     <Route path="/tv/:id" component={TvPage} />
                     <Route path="/" component={HomePage} />
