@@ -11,8 +11,7 @@ const TemplateMoviePage = ({ movie, children }) => {
           <img
             src={
               movie.poster_path
-                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                : "./film-poster-placeholder.png"
+                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : `./film-poster-placeholder.png`
             }
             className="movie"
             alt={movie.title}

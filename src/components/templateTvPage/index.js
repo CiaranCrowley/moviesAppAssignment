@@ -12,7 +12,7 @@ const TemplateTvPage = ({ tv, children }) => {
             src={
                 tv.poster_path
                 ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
-                : "./tv-poster-placeholder.png"
+                : `./tv-poster-placeholder.png`
             }
             className="tv"
             alt={tv.name}

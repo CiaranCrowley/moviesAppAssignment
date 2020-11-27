@@ -77,3 +77,11 @@ export const getTvShows = () => {
       .then(res => res.json())
       .then(json => json.genres);
   };
+
+  export const getTvShowReviews = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };

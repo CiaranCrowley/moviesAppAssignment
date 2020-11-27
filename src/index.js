@@ -14,10 +14,11 @@ import AddMovieReviewPage from './pages/addMovieReviewPage';
 import WatchListPage from "./pages/watchListPage";
 import PopularMoviesPage from "./pages/popularMovies";
 import PopularMoviesContextProvider from "./contexts/popularMoviesContext";
-//import LatestMoviesContextProvider from "./contexts/latestMoviesContext";
 import TvShowsPage from "./pages/tvShowsPage";
 import TvShowsContextProvider from "./contexts/tvContext";
 import TvPage from './pages/tvDetailsPage';
+import TvReviewPage from "./pages/tvReviewPage";
+
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
                     <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
                     <Route exact path="/movies/popular" component={PopularMoviesPage} />
                     <Route exact path="/tv" component={TvShowsPage} />
+                    <Route exact path="/tvReviews/:id" component={TvReviewPage} />
                     <Route path="/movies/:id" component={MoviePage} />
                     <Route path="/tv/:id" component={TvPage} />
                     <Route path="/" component={HomePage} />

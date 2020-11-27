@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Route, withRouter } from "react-router-dom";
 import TvDetails from "../components/tvDetails";
 import PageTemplate from "../components/templateTvPage";
-import MovieReviews from "../components/movieReviews";
+import TvReviews from "../components/tvReviews";
 import useTv from "../hooks/useTv";
 
 const TvPage = props => {
@@ -36,7 +36,7 @@ const TvPage = props => {
         </div>
         <Route
           path={`/tv/:id/reviews`}
-          render={props => <MovieReviews tv={show} {...props} />}
+          render={props => <TvReviews tv={show} {...props} />}
         />
       </>
     ) : (
