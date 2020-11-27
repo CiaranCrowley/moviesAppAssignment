@@ -17,6 +17,7 @@ import PopularMoviesContextProvider from "./contexts/popularMoviesContext";
 //import LatestMoviesContextProvider from "./contexts/latestMoviesContext";
 import TvShowsPage from "./pages/tvShowsPage";
 import TvShowsContextProvider from "./contexts/tvContext";
+import TvPage from './pages/tvDetailsPage';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
                     <Route exact path="/movies/popular" component={PopularMoviesPage} />
                     <Route exact path="/tv" component={TvShowsPage} />
                     <Route path="/movies/:id" component={MoviePage} />
+                    <Route path="/tv/:id" component={TvPage} />
                     <Route path="/" component={HomePage} />
                     <Redirect from="*" to="/" />
                   </Switch>
