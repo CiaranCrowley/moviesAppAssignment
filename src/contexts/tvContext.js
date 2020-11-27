@@ -5,6 +5,13 @@ export const TvShowsContext = createContext(null);
 
 const reducer = (state, action) => {
     switch (action.type) {
+      case "add-showToFavorite":
+        return {
+          tvShows: state.tvShows.map((t) =>
+           t.id === action.payload.show.id ? { ...t, favoriteShow: true } : t
+          ),
+          airing: {...state.airing},
+        };
       case "load":
         return { tvShows: action.payload.tvShows, airing: [...state.airing] };
       case "load-airingToday":
@@ -16,6 +23,11 @@ const reducer = (state, action) => {
 
 const TvShowsContextProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, { tvShows: [], airing: [] });
+
+    const addShowToFavorites = (showId) => {
+      const index = state.tvShows.map((t) => t.id).indexOf(showId);
+      dispatch({ type: "add-showToFavorite", payload: { show: state.tvShows[index] } })
+    }
    
     useEffect(() => {
         getTvShows().then((tvShows) => {
@@ -35,6 +47,7 @@ const TvShowsContextProvider = (props) => {
         value={{
             tvShows: state.tvShows,
             airing: state.airing,
+            addShowToFavorites: addShowToFavorites,
         }}
       >
         {props.children}
