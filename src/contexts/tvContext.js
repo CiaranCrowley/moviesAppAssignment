@@ -15,7 +15,16 @@ const reducer = (state, action) => {
       case "load":
         return { tvShows: action.payload.tvShows, airing: [...state.airing] };
       case "load-airingToday":
-        return { airing: action.payload.tvShows, tvShows: [...state.tvShows]}
+        return { airing: action.payload.tvShows, tvShows: [...state.tvShows] };
+      case "add-tvReview":
+        return {
+          tvShows: state.tvShows.map((t) => 
+          t.id === action .payload.show.id
+            ? { ...t, review: action.payload.review }
+            : t
+          ),
+          airing: [...state.airing],
+        };
       default:
         return state;
     }
@@ -28,6 +37,10 @@ const TvShowsContextProvider = (props) => {
       const index = state.tvShows.map((t) => t.id).indexOf(showId);
       dispatch({ type: "add-showToFavorite", payload: { show: state.tvShows[index] } })
     }
+
+    const addTvShowReview = (show, review) => {
+      dispatch({ type: "add-tvReview", payload: {show, review } });
+    };
    
     useEffect(() => {
         getTvShows().then((tvShows) => {
@@ -48,6 +61,7 @@ const TvShowsContextProvider = (props) => {
             tvShows: state.tvShows,
             airing: state.airing,
             addShowToFavorites: addShowToFavorites,
+            addTvShowReview: addTvShowReview,
         }}
       >
         {props.children}

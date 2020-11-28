@@ -20,6 +20,8 @@ import TvPage from './pages/tvDetailsPage';
 import TvReviewPage from "./pages/tvReviewPage";
 import TvAiringTodayPage from "./pages/tvAiringTodayPage";
 import FavoriteTvShowsPage from "./pages/favoriteTvShowsPage";
+import AddTvShowReviewPage from './pages/addTvShowReviewPage';
+
 
 const App = () => {
   return (
@@ -33,6 +35,7 @@ const App = () => {
                 <GenresContextProvider>
                   <Switch>
                     <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+                    <Route exact path="/tvShowReviews/tvReviewForm" component={AddTvShowReviewPage} />
                     <Route path="/reviews/:id" component={MovieReviewPage} />
                     <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
                     <Route exact path="/movies/watchList" component={WatchListPage} />

@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import PageTemplate from "../components/templateTVListPage";
-import AddReviewButton from '../components/buttons/addReview'
+import AddTvReviewButton from '../components/buttons/addTvShowReview'
 import {TvShowsContext} from '../contexts/tvContext'
 
 const FavoriteShowsPage = props => {
@@ -10,7 +10,7 @@ const FavoriteShowsPage = props => {
     <PageTemplate
       tvShows={favoriteShows}
       title={"Favorite Shows"}
-      action={tv => <AddReviewButton tv={tv} />}
+      action={tv => <AddTvReviewButton tv={tv} />}
     />
   );
 };
