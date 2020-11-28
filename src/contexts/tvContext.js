@@ -20,7 +20,7 @@ const reducer = (state, action) => {
         return {
           tvShows: state.tvShows.map((t) => 
           t.id === action .payload.show.id
-            ? { ...t, review: action.payload.review }
+          ? { ...t, review: action.payload.review }
             : t
           ),
           airing: [...state.airing],
