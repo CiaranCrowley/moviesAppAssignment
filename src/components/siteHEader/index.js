@@ -12,16 +12,16 @@ const SiteHeader = () => {
           TMDB Client
         </Link>
       </nav>
-      {/* <FontAwesomeIcon
+      <FontAwesomeIcon
         className="navbar-text text-light"
         icon={["fas", "video"]}
         size="3x"
-      /> */}
-      {/* <FontAwesomeIcon
+      />
+      <FontAwesomeIcon
         className="navbar-text text-light"
         icon={["fas", "film"]}
         size="3x"
-      /> */}
+      />
       <nav className="navbar navbar-expand ">
         <ul className="navbar-nav">
           <li className="nav-item">
