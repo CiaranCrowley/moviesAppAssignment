@@ -19,7 +19,7 @@ const reducer = (state, action) => {
       case "add-tvReview":
         return {
           tvShows: state.tvShows.map((t) => 
-          t.id === action .payload.show.id
+          t.id === action.payload.show.id
           ? { ...t, review: action.payload.review }
             : t
           ),
