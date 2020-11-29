@@ -86,7 +86,7 @@ describe("Tv Page ", () => {
       });
 
       describe("by genre and name", () => {
-        it("should display movies with the specified genre and name only", () => {
+        it("should display movies with the specified genre and name only", () => {g
           const searchString = "t";
           const selectedGenreId = 35;
           const selectedGenreText = "Comedy";

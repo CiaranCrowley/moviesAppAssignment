@@ -23,11 +23,15 @@ cache:
 
 install_dependencies:
   stage: install
+  only:
+    - staging
   script:
     - npm ci
 
 bundle_app:
   stage: build
+  only:
+    - staging
   artifacts:
     paths:
       - build/
@@ -36,6 +40,8 @@ bundle_app:
 
 e2etest:    
     stage: test
+    only:
+      - staging
     before_script:
       - npm install -g http-server
       - npm install cypress
