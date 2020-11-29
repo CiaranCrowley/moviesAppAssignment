@@ -15,7 +15,7 @@ const AddShowToWatchListButton = ({ tv }) => {
       className="btn w-100 btn-primary"
       onClick={handleAddShowToWatchList}
     >
-      Add to Watch List
+      Add Show to Watch List
     </button>
   );
 };

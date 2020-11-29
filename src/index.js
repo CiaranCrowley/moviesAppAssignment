@@ -21,6 +21,7 @@ import TvReviewPage from "./pages/tvReviewPage";
 import TopRatedTv from "./pages/topRatedTvPage";
 import FavoriteTvShowsPage from "./pages/favoriteTvShowsPage";
 import AddTvShowReviewPage from "./pages/addTvShowReviewPage";
+import TvWatchlistPage from "./pages/tvWatchlistPage";
 
 
 const App = () => {
@@ -44,7 +45,8 @@ const App = () => {
                     <Route exact path="/tv" component={TvShowsPage} />
                     <Route exact path="/tvReviews/:id" component={TvReviewPage} />
                     <Route exact path="/tv/top_rated" component={TopRatedTv} />
-                    <Route exact path="/tv/favoriteShows" component={FavoriteTvShowsPage} />
+                    <Route exact path="/tv/favoriteShows" component={FavoriteTvShowsPage} />.
+                    <Route exact path="/tv/tvWatchlist" component={TvWatchlistPage} />,
                     <Route path="/movies/:id" component={MoviePage} />
                     <Route path="/tv/:id" component={TvPage} />
                     <Route path="/" component={HomePage} />

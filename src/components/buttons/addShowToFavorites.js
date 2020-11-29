@@ -7,6 +7,7 @@ const AddShowToFavoriteButton = ({ tv }) => {
   const handleAddShowToFavorite = e => {
     e.preventDefault();
     context.addShowToFavorites(tv.id);
+    console.log(tv.id)
   };
   return (
     <button

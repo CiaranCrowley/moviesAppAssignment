@@ -70,7 +70,7 @@ export const getTvShows = () => {
 
   export const getTvGenres = () => {
     return fetch(
-      "hthttps://api.themoviedb.org/3/genre/tv/list?api_key" +
+      "https://api.themoviedb.org/3/genre/tv/list?api_key" +
         process.env.REACT_APP_TMDB_KEY +
         "language=en-US"
     )

@@ -18,7 +18,7 @@ const reducer = (state, action) => {
           t.id === action.payload.show.id ? { ...t, topRatedTv: true} : t
           ),
           tvShows: [...state.tvShows],
-        }
+        };
       case "load":
         return { tvShows: action.payload.tvShows, topRatedTv: [...state.topRatedTv] };
       case "load-topRatedTv":
@@ -41,6 +41,7 @@ const TvShowsContextProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, { tvShows: [], topRatedTv: [] });
 
     const addShowToFavorites = (showId) => {
+      console.log(showId)
       const index = state.tvShows.map((t) => t.id).indexOf(showId);
       dispatch({ type: "add-showToFavorite", payload: { show: state.tvShows[index] } })
     }
