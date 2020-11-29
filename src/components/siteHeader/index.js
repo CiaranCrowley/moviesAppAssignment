@@ -12,7 +12,7 @@ const SiteHeader = () => {
           TMDB Client
         </Link>
       </nav>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         className="navbar-text text-light"
         icon={["fas", "video"]}
         size="3x"
@@ -21,7 +21,7 @@ const SiteHeader = () => {
         className="navbar-text text-light"
         icon={["fas", "film"]}
         size="3x"
-      />
+      /> */}
       <nav className="navbar navbar-expand ">
         <ul className="navbar-nav">
           <li className="nav-item">
@@ -60,8 +60,8 @@ const SiteHeader = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="/tv/airing_today">
-              TV Airing Today
+            <Link className="nav-link text-white" to="/tv/top_rated">
+              Top Rated Shows
             </Link>
           </li>
           <li className="nav-item">

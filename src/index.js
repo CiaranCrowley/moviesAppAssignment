@@ -18,7 +18,7 @@ import TvShowsPage from "./pages/tvShowsPage";
 import TvShowsContextProvider from "./contexts/tvContext";
 import TvPage from "./pages/tvDetailsPage";
 import TvReviewPage from "./pages/tvReviewPage";
-import TvAiringTodayPage from "./pages/tvAiringTodayPage";
+import TopRatedTv from "./pages/topRatedTvPage";
 import FavoriteTvShowsPage from "./pages/favoriteTvShowsPage";
 import AddTvShowReviewPage from "./pages/addTvShowReviewPage";
 
@@ -43,7 +43,7 @@ const App = () => {
                     <Route exact path="/movies/popular" component={PopularMoviesPage} />
                     <Route exact path="/tv" component={TvShowsPage} />
                     <Route exact path="/tvReviews/:id" component={TvReviewPage} />
-                    <Route exact path="/tv/airing_today" component={TvAiringTodayPage} />
+                    <Route exact path="/tv/top_rated" component={TopRatedTv} />
                     <Route exact path="/tv/favoriteShows" component={FavoriteTvShowsPage} />
                     <Route path="/movies/:id" component={MoviePage} />
                     <Route path="/tv/:id" component={TvPage} />

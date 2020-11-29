@@ -1,5 +1,5 @@
 import React, { useEffect, createContext, useReducer } from "react";
-import { getTvShows, getTvAiringToday } from "../api/tmdb-api";
+import { getTvShows, getTopRatedTv } from "../api/tmdb-api";
 
 export const TvShowsContext = createContext(null);
 
@@ -10,12 +10,19 @@ const reducer = (state, action) => {
           tvShows: state.tvShows.map((t) =>
            t.id === action.payload.show.id ? { ...t, favoriteShow: true } : t
           ),
-          airing: {...state.airing},
+          topRatedTv: {...state.topRatedTv},
         };
+      case "add-showWatchlist":
+        return {
+          topRatedTv: state.topRatedTv.map((t) =>
+          t.id === action.payload.show.id ? { ...t, topRatedTv: true} : t
+          ),
+          tvShows: [...state.tvShows],
+        }
       case "load":
-        return { tvShows: action.payload.tvShows, airing: [...state.airing] };
-      case "load-airingToday":
-        return { airing: action.payload.tvShows, tvShows: [...state.tvShows] };
+        return { tvShows: action.payload.tvShows, topRatedTv: [...state.topRatedTv] };
+      case "load-topRatedTv":
+        return { topRatedTv: action.payload.tvShows, tvShows: [...state.tvShows] };
       case "add-tvReview":
         return {
           tvShows: state.tvShows.map((t) => 
@@ -23,7 +30,7 @@ const reducer = (state, action) => {
           ? { ...t, review: action.payload.review }
             : t
           ),
-          airing: [...state.airing],
+          topRatedTv: [...state.topRatedTv],
         };
       default:
         return state;
@@ -31,11 +38,17 @@ const reducer = (state, action) => {
 };
 
 const TvShowsContextProvider = (props) => {
-    const [state, dispatch] = useReducer(reducer, { tvShows: [], airing: [] });
+    const [state, dispatch] = useReducer(reducer, { tvShows: [], topRatedTv: [] });
 
     const addShowToFavorites = (showId) => {
       const index = state.tvShows.map((t) => t.id).indexOf(showId);
       dispatch({ type: "add-showToFavorite", payload: { show: state.tvShows[index] } })
+    }
+
+    const addShowToWatchlist = (showId) => {
+      console.log(showId)
+      const index = state.topRatedTv.map((t) => t.id).indexOf(showId);
+      dispatch({type: "add-showWatchlist", payload: { show: state.topRatedTv[index] } });
     }
 
     const addTvShowReview = (show, review) => {
@@ -49,8 +62,8 @@ const TvShowsContextProvider = (props) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     useEffect(() => {
-      getTvAiringToday().then((tvShows) => {
-      dispatch({ type: "load-AiringToday", payload: { tvShows } });
+      getTopRatedTv().then((tvShows) => {
+      dispatch({ type: "load-topRatedTv", payload: { tvShows } });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -59,8 +72,9 @@ const TvShowsContextProvider = (props) => {
       <TvShowsContext.Provider
         value={{
             tvShows: state.tvShows,
-            airing: state.airing,
+            topRatedTv: state.topRatedTv,
             addShowToFavorites: addShowToFavorites,
+            addShowToWatchlist: addShowToWatchlist,
             addTvShowReview: addTvShowReview,
         }}
       >
