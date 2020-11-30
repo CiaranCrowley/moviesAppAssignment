@@ -1,4 +1,4 @@
-let tvShows;    // List of movies from TMDB
+let tvShows;    // List of tvShows from TMDB
 
 // Utility functions
 const filterByName = (tvList, string) =>
@@ -9,7 +9,7 @@ tvList.filter((t) => t.genre_ids.includes(genreId));
 
 describe("Tv Page ", () => {
   before(() => {
-    // Get movies from TMDB and store in movies variable.
+    // Get tv shows from TMDB and store in tv shows variable.
     cy.request(
       `https://api.themoviedb.org/3/discover/tv?api_key=${Cypress.env(
         "TMDB_KEY"
@@ -31,7 +31,7 @@ describe("Tv Page ", () => {
     
       describe("Base test", () => {
         it("displays page header", () => {
-          // cy.get("h2").contains("No. Movies");
+          // cy.get("h2").contains("No. tv shows");
           cy.get("h2").contains("No. Shows");
           cy.get(".badge").contains(20);
         });
@@ -51,7 +51,7 @@ describe("Tv Page ", () => {
             .should("have.text", matchingShows[index].name);
           });
         });
-        it("should display movies with 'o' in the name", () => {
+        it("should display tv shows with 'o' in the name", () => {
           const searchString = "o";
           const matchingShows = filterByName(tvShows, searchString);
           cy.get("input").clear().type(searchString);
@@ -63,7 +63,7 @@ describe("Tv Page ", () => {
           });
         });
       
-        it("should display movies with 'xyz' in the name", () => {
+        it("should display tv shows with 'xyz' in the name", () => {
           const searchString = "xyz";
           const matchingShows = filterByName(tvShows, searchString);
           cy.get("input").clear().type(searchString) ;
@@ -71,7 +71,7 @@ describe("Tv Page ", () => {
         });
       });
       describe("By movie genre", () => {
-        it("should display movies with the specified genre only", () => {
+        it("should display tv shows with the specified genre only", () => {
           const selectedGenreId = 35;
           const selectedGenreText = "Comedy";
           const matchingShows = filterByGenre(tvShows, selectedGenreId);
@@ -86,7 +86,7 @@ describe("Tv Page ", () => {
       });
 
       describe("by genre and name", () => {
-        it("should display movies with the specified genre and name only", () => {g
+        it("should display tv shows with the specified genre and name only", () => {
           const searchString = "t";
           const selectedGenreId = 35;
           const selectedGenreText = "Comedy";
