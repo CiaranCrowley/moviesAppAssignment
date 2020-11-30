@@ -8,16 +8,16 @@ export default ({ tv }) => {
       <p>{tv.overview}</p>
       <ul className="list-group list-group-horizontal">
         <li key="ruh" className="list-group-item list-group-item-dark">
-          Runtime (min.)
+          Average Score
         </li>
         <li key="rut" className="list-group-item ">
-          {tv.runtime}
+          {tv.vote_average}
         </li>
         <li key="rdh" className="list-group-item list-group-item-dark">
           Release Date
         </li>
         <li key="rdv" className="list-group-item ">
-          {tv.release_date}
+          {tv.first_air_date}
         </li>
       </ul>
 

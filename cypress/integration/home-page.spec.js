@@ -87,9 +87,9 @@ describe("Home Page ", () => {
 
       describe("by genre and title", () => {
         it("should display movies with the specified genre and title only", () => {
-          const searchString = "a";
-          const selectedGenreId = 35;
-          const selectedGenreText = "Comedy";
+          const searchString = "e";
+          const selectedGenreId = 16;
+          const selectedGenreText = "Animation";
           const matchingMovies = filterByTitle(movies, searchString) && filterByGenre(movies, selectedGenreId);
           cy.get("input").clear().type(searchString);
           cy.get("select").select(selectedGenreText);
