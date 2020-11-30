@@ -28,7 +28,7 @@ describe("Movie Details Page", () => {
       })
   });
   beforeEach(() => {
-    cy.visit(`/movies/${movie.id}`);
+    cy.visit(`/movies/${movie.id}`, {failOnStatusCode: false});
   });
 
   it("should display movie title in the page header", () => {
