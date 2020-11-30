@@ -17,23 +17,6 @@ const AddShowToFavoriteButton = ({ tv }) => {
       Add to Favorites
     </button>
   );
-
-  // const context = useContext(TvShowsContext);
-
-  // const handleAddShowToFavorite = e => {
-  //   e.preventDefault();
-  //   context.addShowToFavorites(tv.id);
-  //   console.log(tv.id)
-  // };
-  // return (
-  //   <button
-  //     type="button"
-  //     className="btn w-100 btn-primary"
-  //     onClick={handleAddShowToFavorite}
-  //   >
-  //     Add Show to Favorites
-  //   </button>
-  // );
 };
 
 export default AddShowToFavoriteButton;

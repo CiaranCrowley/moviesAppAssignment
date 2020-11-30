@@ -13,16 +13,6 @@ const FavoriteShowsPage = () => {
       action={tv => <AddTvReviewButton tv={tv} />}
     />
   );
-  
-  // const context = useContext(TvShowsContext);
-  // const favoriteShows = context.tvShows.filter( t => t.favoriteShow )
-  // return (
-  //   <PageTemplate
-  //     tvShows={favoriteShows}
-  //     name={"Favorite Shows"}
-  //     action={tv => <AddTvReviewButton tv={tv} />}
-  //   />
-  // );
 };
 
 export default FavoriteShowsPage;

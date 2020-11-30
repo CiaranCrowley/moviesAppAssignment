@@ -12,14 +12,6 @@ const reducer = (state, action) => {
         ),
         topRatedTv: [...state.topRatedTv],
       };
-
-    // case "add-showToFavorite":
-    //   return {
-    //     tvShows: state.tvShows.map((t) =>
-    //      t.id === action.payload.show.id ? { ...t, favoriteShow: true } : t
-    //     ),
-    //     topRatedTv: {...state.topRatedTv},
-    //   };
     case "add-showWatchlist":
       return {
         topRatedTv: state.topRatedTv.map((t) =>
@@ -52,12 +44,6 @@ const TvShowsContextProvider = (props) => {
     dispatch({ type: "add-favoriteTvShow", payload: {show: state.tvShows[index] } });
   }
 
-    // const addShowToFavorites = (showId) => {
-    //   console.log(showId)
-    //   const index = state.tvShows.map((t) => t.id).indexOf(showId);
-    //   dispatch({ type: "add-showToFavorite", payload: { show: state.tvShows[index] } })
-    // }
-
   const addShowToWatchlist = (showId) => {
     console.log(showId)
     const index = state.topRatedTv.map((t) => t.id).indexOf(showId);
@@ -88,7 +74,6 @@ const TvShowsContextProvider = (props) => {
         tvShows: state.tvShows,
         topRatedTv: state.topRatedTv,
         addToFavoriteTvShows: addToFavoriteTvShows,
-        //addShowToFavorites: addShowToFavorites,
         addShowToWatchlist: addShowToWatchlist,
         addTvShowReview: addTvShowReview,
       }}
