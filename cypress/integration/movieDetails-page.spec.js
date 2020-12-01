@@ -31,6 +31,9 @@ describe("Movie Details Page", () => {
   //   cy.visit(`/movies/${movie.id}`, {failOnStatusCode: false});
   // });
 
+
+  //REVERT THIS TO ITS ORIGINAL
+
   beforeEach(() => {
     cy.request(`/movies/${movie.id}`, {failOnStatusCode: false});
   });
