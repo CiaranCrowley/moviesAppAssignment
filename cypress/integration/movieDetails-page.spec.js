@@ -36,11 +36,9 @@ describe("Movie Details Page", () => {
     cy.get(".card").eq(2).find("img").click();
   });
 
-  //REVERT THIS TO ITS ORIGINAL
-
-  beforeEach(() => {
-    cy.request(`/movies/${movie.id}`, {failOnStatusCode: false});
-  });
+  // beforeEach(() => {
+  //   cy.request(`/movies/${movie.id}`, {failOnStatusCode: false});
+  // });
 
   it("should display movie title in the page header", () => {
     cy.get("h2").contains(movie.title);
