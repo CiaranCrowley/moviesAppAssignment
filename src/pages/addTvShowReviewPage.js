@@ -2,7 +2,7 @@ import React from "react";
 import PageTemplate from "../components/templateTvPage";
 import TvReviewForm from '../components/tvReviewForm'
 
-const ReviewFormPage = props => {
+const TvReviewFormPage = props => {
 
   return (
       <PageTemplate tv={props.location.state.tv}>
@@ -10,4 +10,4 @@ const ReviewFormPage = props => {
       </PageTemplate>
   );
 };
-export default ReviewFormPage;
+export default TvReviewFormPage;

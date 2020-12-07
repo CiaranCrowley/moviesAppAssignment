@@ -9,8 +9,8 @@ const TvReviewForm = ({ tv, history }) => {
   const context = useContext(TvShowsContext);
 
   const onSubmit = data => {
-    context.addReview(tv, data)
-    history.push("/tv/favorites");
+    context.addTvShowReview(tv, data)
+    history.push("/tv/favoriteShows");
   };
 
   return (
