@@ -49,6 +49,8 @@ describe("Navigation", () => {
     });
   });
 
+
+  //  ********************    MOVIE NAVIGATION TESTS    ********************
   describe("From the home page", () => {
     beforeEach(() => {
       cy.visit("/");
@@ -72,7 +74,6 @@ describe("Navigation", () => {
     });
   });
 
-  //change these TV test blocks to navigate to '/' and then use the nav bar to get to all the tv stuff
   describe("From the Favorites page", () => {
     beforeEach(() => {
       cy.visit("/");
@@ -108,6 +109,8 @@ describe("Navigation", () => {
     });
   });
 
+  //  ********************    TV  NAVIGATION  TESTS    ********************
+  //change these TV test blocks to navigate to '/' and then use the nav bar to get to all the tv stuff
   describe("From the Tv Shows page", () => {
     beforeEach(() => {
       cy.visit("/tv", {failOnStatusCode: false});

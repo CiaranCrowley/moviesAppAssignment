@@ -27,18 +27,11 @@ describe("Movie Details Page", () => {
         return movieDetails.id;
       })
   });
-  // beforeEach(() => {
-  //   cy.visit(`/movies/${movie.id}`, {failOnStatusCode: false});
-  // });
 
   beforeEach(() => {
     cy.visit(`/`);
     cy.get(".card").eq(2).find("img").click();
   });
-
-  // beforeEach(() => {
-  //   cy.request(`/movies/${movie.id}`, {failOnStatusCode: false});
-  // });
 
   it("should display movie title in the page header", () => {
     cy.get("h2").contains(movie.title);
