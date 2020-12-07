@@ -10,9 +10,8 @@ const TemplateTvPage = ({ tv, children }) => {
         <div className="col-3">
           <img
             src={
-                tv.poster_path
-                ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
-                : `./tv-poster-placeholder.png`
+              tv.poster_path 
+                ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}` : `./tv-poster-placeholder.png`
             }
             className="tv"
             alt={tv.name}

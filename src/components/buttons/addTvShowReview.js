@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TvShowReviewButton = ({ show }) => {
+const TvShowReviewButton = ({ tv }) => {
   return (
     <Link
       className="btn w-100 btn-primary "
       to={{
         pathname: `/tvShowReviews/tvReviewForm`,
         state: {
-          show: show
+          tv: tv
         }
       }}
     >

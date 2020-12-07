@@ -1,11 +1,12 @@
 import React from "react";
 import PageTemplate from "../components/templateTvPage";
+import TvReviewForm from '../components/tvReviewForm'
 
 const ReviewFormPage = props => {
 
   return (
       <PageTemplate tv={props.location.state.tv}>
-          <h3>Placeholder for web form</h3>
+          <TvReviewForm tv={props.location.state.tv} />
       </PageTemplate>
   );
 };
