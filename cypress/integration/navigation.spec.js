@@ -87,44 +87,51 @@ describe("Navigation", () => {
     });
   });
 
-  // describe("From the Upcoming page", () => {
-  //   beforeEach(() => {
-  //     cy.visit("/");
-  //     cy.get(".card").eq(0).find("button").click();
-  //     cy.get("nav").find("li").eq(2).find("a").click();
-  //   });
-  //   it("should navigate to the movies detail page and change the browser URL", () => {
-  //     cy.get(".card").eq(0).find("img").click();
-  //     cy.url().should("include", `/movies/${movies[0].id}`);
-  //     cy.get("h2").contains(movies[0].title);
-  //   });
-  // });
+  describe("From the Upcoming page", () => {
+    beforeEach(() => {
+      cy.visit("/");
+    });
+    it("should navigate to the upcoming movie details page and change browser URL", () => {
+      cy.get("nav").find("li").eq(1).click();
+      cy.url().should("include", `/movies/upcoming`);
+      cy.get("h2").contains("Upcoming Movies");
+    });
+    it("should add movie to watch list", () => {
+      cy.get("nav").find("li").eq(1).click();
+      cy.get(".card").eq(0).find("button").click();
+      cy.get("nav").find("li").eq(5).click();
+      cy.url().should("include", `/movies/watchList`);
+      cy.get(".card").eq(0).find("img").click();
+      cy.get("h2");
+    });
+  });
 
-  // describe("From the Popular page", () => {
-  //   beforeEach(() => {
-  //     cy.visit("/");
-  //     cy.get(".card").eq(0).find("button").click();
-  //     cy.get("nav").find("li").eq(2).find("a").click();
-  //   });
-  //   it("should navigate to the movies detail page and change the browser URL", () => {
-  //     cy.get(".card").eq(0).find("img").click();
-  //     cy.url().should("include", `/movies/${movies[0].id}`);
-  //     cy.get("h2").contains(movies[0].title);
-  //   });
-  // });
+  describe("From the Popular page", () => {
+    beforeEach(() => {
+      cy.visit("/");
+      cy.get("nav").find("li").eq(2).click();
+    });
+    it("should click write a review button and go back", () => {
+      cy.get(".card").eq(0).contains("Write a Review").click();
+      cy.url().should("include", `/reviews/form`);
+      cy.get("svg[data-icon=arrow-circle-left]").click({force: true});
+      cy.url().should("not.include", `/reviews`);
+    });
+  });
 
-  // describe("To Latest page", () => {
-  //   beforeEach(() => {
-  //     cy.visit("/");
-  //     cy.get(".card").eq(0).find("button").click();
-  //     cy.get("nav").find("li").eq(2).find("a").click();
-  //   });
-  //   it("should navigate to the movies detail page and change the browser URL", () => {
-  //     cy.get(".card").eq(0).find("img").click();
-  //     cy.url().should("include", `/movies/${movies[0].id}`);
-  //     cy.get("h2").contains(movies[0].title);
-  //   });
-  // });
+  describe("To Latest page", () => {
+    beforeEach(() => {
+      cy.visit("/");
+      cy.get("nav").find("li").eq(3).click();
+    });
+    it("should click the show reviews button, hide it, and return to home ", () => {
+      cy.url().should("include", `/movies/latest`);
+      cy.url().should("not.include", `/reviews`);
+      cy.contains("Show Reviews").click();
+      cy.get(".table").contains("Author");
+      cy.contains("Hide Reviews").click();
+    });
+  });
 
   describe("The Go Back button", () => {
     beforeEach(() => {
@@ -151,10 +158,8 @@ describe("Navigation", () => {
   //  ********************    END OF MOVIE TESTS ********************
 
   //  ********************    TV  NAVIGATION  TESTS    ********************
-  //change these TV test blocks to navigate to '/' and then use the nav bar to get to all the tv stuff
   describe("From the Tv Shows page", () => {
     beforeEach(() => {
-      // cy.visit("/tv", {failOnStatusCode: false});
       cy.visit("/");
     });
     it("should navigate to the show details page and change browser URL", () => {
@@ -179,7 +184,6 @@ describe("Navigation", () => {
 
   describe("From the Tv Show Details page ", () => {
     beforeEach(() => {
-      //cy.visit(`/tv/${showId}`, {failOnStatusCode: false});
       cy.visit('/');
       cy.get("nav").find("li").eq(6).click();
       cy.get(".card").eq(0).find("img").click();
@@ -198,50 +202,24 @@ describe("Navigation", () => {
     });
   });
 
-  // describe("From Top Rated Shows Page", () => {
-  //   beforeEach(() => {
-  //     cy.visit("/");
-  //     cy.get("nav").find("li").eq(7).find("a").click();
-  //   });
-  //   //  ********************    NAVIGATES FROM TOP RATED TV SHOWS TO show details    ********************
-  //   it("should navigate to the Tv Show's detail page and change the browser URL", () => {
-  //     cy.url().should("include", `/tv/top_rated`)
-  //     cy.get(".card").eq(0).find("img").click();
-  //     //    FOR SOME REASON, tvShows[0] IS GETTING THE MANDALORIAN INFO
-  //     cy.url().should("include", `/tv/${tvShows[0].id}`);
-  //     cy.get("h2").contains(tvShows[0].name );
-  //   });
-  //   //  ********************    NAVIGATES FROM TOP RATED TV SHOWS TO WATCH LIST AND CLICKS TV CARD    ********************
-  //   it("should navigate to the Top Rated page, find card 0 and click the add to show watch list button ", () => {
-  //     cy.url().should("include", `/tv/top_rated`)
-  //     cy.get(".card").eq(0).find("button").click();
-  //     cy.get("nav").find("li").eq(9).find("a").click();
-  //     cy.get(".card").eq(0).find("img").click();
-  //     cy.get("h2").contains(tvShows[0].name);
-  //   });
-  // });
-
-  // describe("The Go Back button", () => {
-  //   beforeEach(() => {
-  //     cy.visit("/");
-  //   });
-  //   it("should navigate from home page to movie details and back", () => {
-  //     cy.get(".card").eq(0).find("img").click();
-  //     cy.get("svg[data-icon=arrow-circle-left]").click({force: true});
-  //     cy.url().should("not.include", `/movies`);
-  //     cy.get("h2").contains("No. Movies");
-  //   });
-  //   it("should navigate from favorites page to movie details and back", () => {
-  //     cy.get(".card").eq(0).find("button").click();
-  //     cy.get("nav").find("li").eq(4).find("a").click();
-  //     cy.get("nav").find("li").eq(4).find("a").click();
-  //     cy.url().should("include", `/favorites`);
-  //     cy.get("h2").contains("Favorite Movies");
-  //     cy.get(".card").eq(0).find("img").click();
-  //     cy.get("svg[data-icon=arrow-circle-left]").click({force: true});
-  //     cy.get("h2").contains("Favorite Movies");
-  //   });
-  // });
-
-
+  describe("From Top Rated Shows Page", () => {
+    beforeEach(() => {
+      cy.visit("/");
+      cy.get("nav").find("li").eq(7).find("a").click();
+    });
+    //  ********************    NAVIGATES FROM TOP RATED TV SHOWS TO show details    ********************
+    it("should navigate to the Tv Show's detail page and change the browser URL", () => {
+      cy.url().should("include", `/tv/top_rated`)
+      cy.get(".card").eq(0).find("img").click();
+      cy.url().should("include", `/tv/`);
+    });
+    //  ********************    NAVIGATES FROM TOP RATED TV SHOWS TO WATCH LIST AND CLICKS TV CARD    ********************
+    it("should navigate to the Top Rated page, find card 0 and click the add to show watch list button ", () => {
+      cy.url().should("include", `/tv/top_rated`)
+      cy.get(".card").eq(0).find("button").click();
+      cy.get("nav").find("li").eq(9).find("a").click();
+      cy.get(".card").eq(0).find("img").click();
+      cy.get("h2");
+    });
+  });
 });
