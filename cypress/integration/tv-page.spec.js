@@ -19,88 +19,88 @@ describe("Tv Page ", () => {
       .then((response) => {
         tvShows = response.results
       })
-  })
-  beforeEach(() => {
-    cy.visit("/tv")
   });
 
-  describe("Tv Page", () => {
-      beforeEach(() => {
-        cy.visit("/tv");
-      });
-    
-      describe("Base test", () => {
-        it("displays page header", () => {
-          // cy.get("h2").contains("No. tv shows");
-          cy.get("h2").contains("No. Shows");
-          cy.get(".badge").contains(20);
-        });
-      })
-    })
+  beforeEach(() => {
+    cy.visit("/");
+    cy.get("nav").find("li").eq(6).click();
+  });
 
-    describe("Filtering", () => {
-      describe("By show name" ,() => {
-        it("should display shows with 'p ' in the name", () => {
-          const searchString = 'p'
-          const matchingShows = filterByName(tvShows, searchString );
-          cy.get("input").clear().type(searchString) ;
-          cy.get(".card").should("have.length", matchingShows.length);
-          cy.get(".card").each(($card, index) => {
-            cy.wrap($card)
-            .find(".card-name")
-            .should("have.text", matchingShows[index].name);
-          });
-        });
-        it("should display tv shows with 'o' in the name", () => {
-          const searchString = "o";
-          const matchingShows = filterByName(tvShows, searchString);
-          cy.get("input").clear().type(searchString);
-          cy.get(".card").should("have.length", matchingShows.length);
-          cy.get(".card").each(($card, index) => {
-            cy.wrap($card)
-            .find(".card-name")
-            .should("have.text", matchingShows[index].name);
-          });
-        });
-      
-        it("should display tv shows with 'xyz' in the name", () => {
-          const searchString = "xyz";
-          const matchingShows = filterByName(tvShows, searchString);
-          cy.get("input").clear().type(searchString) ;
-          cy.get(".card").should("have.length", matchingShows.length);
-        });
-      });
-      describe("By movie genre", () => {
-        it("should display tv shows with the specified genre only", () => {
-          const selectedGenreId = 35;
-          const selectedGenreText = "Comedy";
-          const matchingShows = filterByGenre(tvShows, selectedGenreId);
-          cy.get("select").select(selectedGenreText); 
-          cy.get(".card").should("have.length", matchingShows.length);
-          cy.get(".card").each(($card, index) => {
-            cy.wrap($card)
-              .find(".card-name")
-              .should("have.text", matchingShows[index].name);
-          });      
-        });
-      });
-
-      describe("by genre and name", () => {
-        it("should display tv shows with the specified genre and name only", () => {
-          const searchString = "t";
-          const selectedGenreId = 35;
-          const selectedGenreText = "Comedy";
-          const matchingShows = filterByName(tvShows, searchString) && filterByGenre(tvShows, selectedGenreId);
-          cy.get("input").clear().type(searchString);
-          cy.get("select").select(selectedGenreText);
-          cy.get(".card").should("have.length", matchingShows.length);
-          cy.get(".card").each(($card, index) => {
-            cy.wrap($card)
-              .find(".card-name")
-              .should("have.text", matchingShows[index].name);
-          }); 
-        });
-      });
-
+  describe("Base test", () => {
+    it("displays page header", () => {
+      // cy.get("h2").contains("No. tv shows");
+      cy.get("h2").contains("No. Shows");
+      cy.get(".badge").contains(20);
     });
   });
+
+  // describe("Tv Page", () => {
+  //     beforeEach(() => {
+  //       cy.visit("/tv");
+  //     });
+  //   })
+  
+  describe("Filtering", () => {
+    describe("By show name" ,() => {
+      it("should display shows with 'p ' in the name", () => {
+        const searchString = 'p'
+        const matchingShows = filterByName(tvShows, searchString );
+        cy.get("input").clear().type(searchString) ;
+        cy.get(".card").should("have.length", matchingShows.length);
+        cy.get(".card").each(($card, index) => {
+          cy.wrap($card)
+          .find(".card-name")
+          .should("have.text", matchingShows[index].name);
+        });
+      });
+      it("should display tv shows with 'o' in the name", () => {
+        const searchString = "o";
+        const matchingShows = filterByName(tvShows, searchString);
+        cy.get("input").clear().type(searchString);
+        cy.get(".card").should("have.length", matchingShows.length);
+        cy.get(".card").each(($card, index) => {
+          cy.wrap($card)
+            .find(".card-name")
+            .should("have.text", matchingShows[index].name);
+        });
+      });
+      it("should display tv shows with 'xyz' in the name", () => {
+        const searchString = "xyz";
+        const matchingShows = filterByName(tvShows, searchString);
+        cy.get("input").clear().type(searchString) ;
+        cy.get(".card").should("have.length", matchingShows.length);
+      });
+    });
+    
+    describe("By movie genre", () => {
+      it("should display tv shows with the specified genre only", () => {
+        const selectedGenreId = 35;
+        const selectedGenreText = "Comedy";
+        const matchingShows = filterByGenre(tvShows, selectedGenreId);
+        cy.get("select").select(selectedGenreText); 
+        cy.get(".card").should("have.length", matchingShows.length);
+        cy.get(".card").each(($card, index) => {
+          cy.wrap($card)
+            .find(".card-name")
+            .should("have.text", matchingShows[index].name);
+        });
+      });
+    });
+    describe("by genre and name", () => {
+      it("should display tv shows with the specified genre and name only", () => {
+        const searchString = "t";
+        const selectedGenreId = 35;
+        const selectedGenreText = "Comedy";
+        const matchingShows = filterByName(tvShows, searchString) && filterByGenre(tvShows, selectedGenreId);
+        cy.get("input").clear().type(searchString);
+        cy.get("select").select(selectedGenreText);
+        cy.get(".card").should("have.length", matchingShows.length);
+        cy.get(".card").each(($card, index) => {
+          cy.wrap($card)
+            .find(".card-name")
+            .should("have.text", matchingShows[index].name);
+        }); 
+      });
+    });
+  });
+});

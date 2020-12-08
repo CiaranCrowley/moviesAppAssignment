@@ -27,15 +27,18 @@ describe("tv Details Page", () => {
         return tvDetails.id;
       })
   });
+
   beforeEach(() => {
-    cy.visit(`/tv/${tv.id}`);
+    cy.visit(`/`);
+    cy.get("nav").find("li").eq(6).click();
   });
 
   it("should display tv title in the page header", () => {
-    cy.get("h2").contains(tv.name);
+    cy.get("h2").contains("No. Shows");
   });
 
   it("should display the tv's details", () => {
+    cy.get(".card").eq(2).find("img").click();
     cy.get("h4").contains("Overview");
     cy.get("h4").next().contains(tv.overview);
     cy.get("ul")
@@ -49,6 +52,7 @@ describe("tv Details Page", () => {
   });
 
   it("should display the Home icon with the correct URL value", () => {
+    cy.get(".card").eq(2).find("img").click();
     cy.get(".fa-home")
       .parent()
       .should("have.attr", "href")
@@ -56,6 +60,7 @@ describe("tv Details Page", () => {
   });
 
   it("should display the poster has the a src attribute", () => {
+    cy.get(".card").eq(2).find("img").click();
     cy.get(".tv")
       .should("have.attr", "src");
   });
