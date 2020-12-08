@@ -109,6 +109,10 @@ describe("Navigation", () => {
     });
   });
 
+  //  ********************    REMAINING MOVIE TESTS I.E. LATEST, POPULAR, UPCOMING, REVIEWS, BUTTONS    ********************
+
+
+  //  ********************    END OF MOVIE TESTS ********************
   //  ********************    TV  NAVIGATION  TESTS    ********************
   //change these TV test blocks to navigate to '/' and then use the nav bar to get to all the tv stuff
   describe("From the Tv Shows page", () => {
@@ -138,7 +142,8 @@ describe("Navigation", () => {
 
   describe("From the Tv Show Details page ", () => {
     beforeEach(() => {
-      cy.visit(`/tv/${showId}`);
+      cy.visit(`/tv/${showId}`, {failOnStatusCode: false});
+      //cy.visit('/');
     });
     it("should change browser URL when show/hide reviews is clicked", () => {
       cy.contains("Show Reviews").click();
@@ -146,7 +151,6 @@ describe("Navigation", () => {
       cy.contains("Hide Reviews").click();
       cy.url().should("not.include", `/tv/${showId}/reviews`);
     });
-
     it("navigate to the full review page when a 'Full Review' link is clicked", () => {
       cy.contains("Show Reviews").click();
       cy.url().should("include", `/tv/${showId}/reviews`);
@@ -155,13 +159,19 @@ describe("Navigation", () => {
     });
   });
 
-  // describe("From the Favorites page", () => {
+  // describe("From Top Rated Shows Page", () => {
   //   beforeEach(() => {
   //     cy.visit("/");
   //     cy.get(".card").eq(0).find("button").click();
   //     cy.get("nav").find("li").eq(2).find("a").click();
   //   });
-  //   it("should navigate to the movies detail page and change the browser URL", () => {
+  //   it("should navigate to the Tv Show's detail page and change the browser URL", () => {
+  //     cy.get(".card").eq(0).find("img").click();
+  //     cy.url().should("include", `/movies/${movies[0].id}`);
+  //     cy.get("h2").contains(movies[0].title);
+  //   });
+  //   REMEMBER EACH OF THESE BEGINS FROM '/' IN URL AND THEN NAVIGATES
+  //   it("should navigate to the Top Rated page, find card 0 and click add to show watch list ", () => {
   //     cy.get(".card").eq(0).find("img").click();
   //     cy.url().should("include", `/movies/${movies[0].id}`);
   //     cy.get("h2").contains(movies[0].title);
