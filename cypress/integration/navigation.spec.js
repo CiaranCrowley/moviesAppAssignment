@@ -113,9 +113,11 @@ describe("Navigation", () => {
   //change these TV test blocks to navigate to '/' and then use the nav bar to get to all the tv stuff
   describe("From the Tv Shows page", () => {
     beforeEach(() => {
-      cy.visit("/tv", {failOnStatusCode: false});
+      // cy.visit("/tv", {failOnStatusCode: false});
+      cy.visit("/");
     });
     it("should navigate to the show details page and change browser URL", () => {
+      cy.get("nav").find("li").eq(6).click();
       cy.get(".card").eq(1).find("img").click();
       cy.url().should("include", `/tv/${tvShows[1].id}`);
       cy.get("h2").contains(tvShows[1].name);
@@ -136,7 +138,7 @@ describe("Navigation", () => {
 
   describe("From the Tv Show Details page ", () => {
     beforeEach(() => {
-      cy.visit(`/tv/${showId}`, {failOnStatusCode: false});
+      cy.visit(`/tv/${showId}`);
     });
     it("should change browser URL when show/hide reviews is clicked", () => {
       cy.contains("Show Reviews").click();
