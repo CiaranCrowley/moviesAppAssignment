@@ -1,6 +1,10 @@
-import React from "react";
-import PageTemplate from '../components/templateMoviePage'
-import MovieReview from "../components/movieReview";
+// import React from "react";
+import React, { lazy } from "react";
+// import PageTemplate from '../components/templateMoviePage'
+// import MovieReview from "../components/movieReview";
+
+const PageTemplate = lazy(() => import("../components/templateMoviePage"));
+const MovieReview = lazy(() => import("../components/movieReview"));
 
 const MovieReviewPage = (props) => {
   return (

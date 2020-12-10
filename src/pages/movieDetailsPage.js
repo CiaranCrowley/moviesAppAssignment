@@ -1,9 +1,14 @@
-import React from "react";
+// import React from "react";
+import React, { lazy } from "react";
 import { Link, Route, withRouter } from "react-router-dom";
-import MovieDetails from "../components/movieDetails";
-import PageTemplate from "../components/templateMoviePage";
-import MovieReviews from "../components/movieReviews";
+// import MovieDetails from "../components/movieDetails";
+// import PageTemplate from "../components/templateMoviePage";
+// import MovieReviews from "../components/movieReviews";
 import useMovie from "../hooks/useMovie";
+
+const MovieDetails = lazy(() => import("../components/movieDetails"));
+const PageTemplate = lazy(() => import("../components/templateMoviePage"));
+const MovieReviews = lazy(() => import("../components/movieReviews"));
 
 const MoviePage = props => {
   const { id } = props.match.params;

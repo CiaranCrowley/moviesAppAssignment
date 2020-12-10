@@ -1,9 +1,14 @@
-import React from "react";
+// import React from "react";
+import React, { lazy } from "react";
 import { Link, Route, withRouter } from "react-router-dom";
-import TvDetails from "../components/tvDetails";
-import PageTemplate from "../components/templateTvPage";
-import TvReviews from "../components/tvReviews";
+// import TvDetails from "../components/tvDetails";
+// import PageTemplate from "../components/templateTvPage";
+// import TvReviews from "../components/tvReviews";
 import useTv from "../hooks/useTv";
+
+const TvDetails = lazy(() => import("../components/tvDetails"));
+const PageTemplate = lazy(() => import("../components/templateTvPage"));
+const TvReviews = lazy(() => import("../components/tvReviews"));
 
 const TvPage = props => {
   const { id } = props.match.params;

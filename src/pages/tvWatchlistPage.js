@@ -1,8 +1,11 @@
-import React, {useContext} from "react";
-import PageTemplate from "../components/templateTVListPage";
-import AddTvShowReviewButton from '../components/buttons/addTvShowReview'
+// import React, {useContext} from "react";
+import React, {useContext, lazy} from "react";
+// import PageTemplate from "../components/templateTVListPage";
+// import AddTvShowReviewButton from '../components/buttons/addTvShowReview'
 import {TvShowsContext} from '../contexts/tvContext'
 
+const PageTemplate = lazy(() => import("../components/templateTVListPage"));
+const AddTvShowReviewButton = lazy(() => import("../components/buttons/addTvShowReview"));
 
 const WatchListPage = () => {
   const context = useContext(TvShowsContext);

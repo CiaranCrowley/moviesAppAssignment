@@ -1,6 +1,10 @@
-import React from "react";
-import PageTemplate from "../components/templateTvPage";
-import TvReviewForm from '../components/tvReviewForm'
+// import React, { useContext } from "react";
+import React, { lazy } from "react";
+// import PageTemplate from "../components/templateTvPage";
+// import TvReviewForm from '../components/tvReviewForm'
+
+const PageTemplate = lazy(() => import("../components/templateTvPage"));
+const TvReviewForm = lazy(() => import("../components/tvReviewForm"));
 
 const TvReviewFormPage = props => {
 

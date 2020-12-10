@@ -1,8 +1,11 @@
-import React, {useContext} from "react";
-import MovieListPageTemplate from "../components/templateMovieListPage";
-import AddReviewButton from '../components/buttons/addReview'
+// import React, {useContext} from "react";
+import React, {useContext, lazy} from "react";
+// import MovieListPageTemplate from "../components/templateMovieListPage";
+// import AddReviewButton from '../components/buttons/addReview'
 import {MoviesContext} from '../contexts/moviesContext'
 
+const MovieListPageTemplate = lazy(() => import("../components/templateMovieListPage"));
+const AddReviewButton = lazy(() => import("../components/buttons/addReview"));
 
 const WatchListPage = props => {
   const context = useContext(MoviesContext);
