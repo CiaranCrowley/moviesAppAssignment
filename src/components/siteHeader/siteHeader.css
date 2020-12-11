@@ -3,11 +3,24 @@
     padding-bottom: 0px;
 }
 
-.navbar {
-    padding-right: 100px;
+.nav {
+    background-color: #007BFF;
 }
 
-.dropbtn {
+.navbar {
+    padding-right: 100px;
+    background-color: #007BFF;
+}
+
+/* .navbar-brand {
+    background-color: #007BFF;
+} */
+
+.nav-link {
+    color: #000000;
+}
+
+/* .dropbtn {
     background-color: #343A40;
     color: #ffffff;
     padding-top: 8px;
@@ -42,4 +55,4 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #555b61;}
+.dropdown:hover .dropbtn {background-color: #555b61;} */
