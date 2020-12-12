@@ -21,10 +21,10 @@ const SiteHeader = () => {
           <Nav.Link className="text-white my-auto" as={Link} to="/">Home</Nav.Link>
           <NavDropdown title={<span className="text-white my-auto">Movies Menu</span>}>
             <NavDropdown.Item className="text-black my-auto" as={Link} to="/">Movies</NavDropdown.Item>
-            <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/upcoming">Upcoming movies</NavDropdown.Item>
-            <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/popular">Popular</NavDropdown.Item>
-            <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/latest">Latest</NavDropdown.Item>
-            <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/favorites">Your Favourite Movies </NavDropdown.Item>
+            <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/upcoming">Upcoming Movies</NavDropdown.Item>
+            <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/popular">Popular Movies</NavDropdown.Item>
+            <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/latest">Latest Movies</NavDropdown.Item>
+            <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/favorites">Your Favourite Movies</NavDropdown.Item>
             <NavDropdown.Item className="text-black my-auto" as={Link} to="/movies/watchList">Watch List</NavDropdown.Item>
           </NavDropdown>
 
