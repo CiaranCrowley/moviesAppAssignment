@@ -23,22 +23,16 @@ describe("Tv Page ", () => {
 
   beforeEach(() => {
     cy.visit("/");
-    cy.get("nav").find("li").eq(6).click();
+    cy.get(".dropdown").contains("TV Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Tv Shows").click();
+    cy.wait(200);
   });
 
   describe("Base test", () => {
     it("displays page header", () => {
-      // cy.get("h2").contains("No. tv shows");
       cy.get("h2").contains("No. Shows");
       cy.get(".badge").contains(20);
     });
   });
-
-  // describe("Tv Page", () => {
-  //     beforeEach(() => {
-  //       cy.visit("/tv");
-  //     });
-  //   })
   
   describe("Filtering", () => {
     describe("By show name" ,() => {

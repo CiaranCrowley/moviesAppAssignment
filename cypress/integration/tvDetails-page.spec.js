@@ -30,7 +30,8 @@ describe("tv Details Page", () => {
 
   beforeEach(() => {
     cy.visit(`/`);
-    cy.get("nav").find("li").eq(6).click();
+    cy.get(".dropdown").contains("TV Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Tv Shows").click();
+    cy.wait(200);
   });
 
   it("should display tv title in the page header", () => {
@@ -42,7 +43,7 @@ describe("tv Details Page", () => {
     cy.get("h4").contains("Overview");
     cy.get("h4").next().contains(tv.overview);
     cy.get("ul")
-      .eq(1)
+      // .eq(1)
       .within(() => {
         cy.get("li").eq(0).contains("Average Score");
         cy.get("li").eq(1).contains(tv.vote_average);
