@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../globals/fontawesome";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./siteHeader.css";
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 // import DropdownButton from 'react-bootstrap/DropdownButton'
 // import Dropdown from 'react-bootstrap/Dropdown'
 import Navbar from 'react-bootstrap/Navbar';

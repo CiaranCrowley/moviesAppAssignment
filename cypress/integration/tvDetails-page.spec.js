@@ -43,7 +43,6 @@ describe("tv Details Page", () => {
     cy.get("h4").contains("Overview");
     cy.get("h4").next().contains(tv.overview);
     cy.get("ul")
-      // .eq(1)
       .within(() => {
         cy.get("li").eq(0).contains("Average Score");
         cy.get("li").eq(1).contains(tv.vote_average);
