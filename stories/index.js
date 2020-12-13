@@ -7,12 +7,12 @@ import MoviesHeader from "../src/components/headerMovieList";
 import MovieList from "../src/components/movieList";
 import MovieDetails from "../src/components/movieDetails";
 import MovieHeader from "../src/components/headerMovie";
-import AddFavoriteButton from "../src/components/buttons/addToFavorites";
+// import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
-import UpcomingMovies from '../src/components/upcomingMovies';
-import PopularMoviesPage from "../src/pages/popularMovies";
+// import UpcomingMovies from '../src/components/upcomingMovies';
+// import PopularMoviesPage from "../src/pages/popularMovies";
 
 const sample = {
   adult: false,
@@ -155,34 +155,34 @@ storiesOf("Movie Details Page/MovieHeader", module)
   ))
   .add("default", () => <MovieHeader movie={sample} />);
 
-storiesOf("Upcoming Movies Details Page/Upcoming Movies", module)
-  .addDecorator(story => (
-      <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
-  ))
-  .add("default", () => {
-    const movies = [sample, sample, sample, sample, sample];
-    return(
-      <UpcomingMovies
-        movies={movies}
-        action={movie => (
-          <button className="btn w-100 btn-primary">Test</button>
-        )}
-      />
-    );
-  });
+// storiesOf("Upcoming Movies Details Page/Upcoming Movies", module)
+//   .addDecorator(story => (
+//       <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+//   ))
+//   .add("default", () => {
+//     const movies = [sample, sample, sample, sample, sample];
+//     return(
+//       <UpcomingMovies
+//         movies={movies}
+//         action={movie => (
+//           <button className="btn w-100 btn-primary">Test</button>
+//         )}
+//       />
+//     );
+//   });
 
-  storiesOf("Popular Movies Details Page/Popular Movies", module)
-    .addDecorator(story => (
-      <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
-    ))
-    .add("defaule", () => {
-      const movies = [sample, sample, sample, sample, sample];
-      return(
-        <PopularMoviesPage
-        movies={movies}
-        action={movie => (
-          <button className="btn w-100 btn-primary">Test</button>
-        )}
-        />
-      );
-    });
+  // storiesOf("Popular Movies Details Page/Popular Movies", module)
+  //   .addDecorator(story => (
+  //     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  //   ))
+  //   .add("defaule", () => {
+  //     const movies = [sample, sample, sample, sample, sample];
+  //     return(
+  //       <PopularMoviesPage
+  //       movies={movies}
+  //       action={movie => (
+  //         <button className="btn w-100 btn-primary">Test</button>
+  //       )}
+  //       />
+  //     );
+  //   });
