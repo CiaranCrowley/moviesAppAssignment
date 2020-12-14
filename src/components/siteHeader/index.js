@@ -32,12 +32,15 @@ const SiteHeader = () => {
           <NavDropdown title={<span className="text-white my-auto">TV Menu</span>}>
             <NavDropdown.Item className="text-black my-auto" as={Link} to="/tv">Tv Shows</NavDropdown.Item>
             <NavDropdown.Item className="text-black my-auto" as={Link} to="/tv/top_rated">Top Rated Shows</NavDropdown.Item>
-            <NavDropdown.Item className="text-black my-auto" as={Link} to="/tv/favoriteShows">Your Favourite Tv Shows </NavDropdown.Item>
+            <NavDropdown.Item className="text-black my-auto" as={Link} to="/tv/favoriteShows">Your Favourite Tv Show </NavDropdown.Item>
             <NavDropdown.Item className="text-black my-auto" as={Link} to="/tv/tvWatchlist">Watch List</NavDropdown.Item>
           </NavDropdown>
 
           {/* PEOPLE */}
-          <Nav.Link className="text-white my-auto" as={Link} to="/people">Popular Actors</Nav.Link>
+          <NavDropdown title={<span className="text-white my-auto">Actors Menu</span>}>
+            <NavDropdown.Item className="text-black my-auto" as={Link} to="/people">Popular Actors</NavDropdown.Item>
+            <NavDropdown.Item className="text-black my-auto" as={Link} to="/people/favoriteActors">Your Favourite Actors</NavDropdown.Item>
+          </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
