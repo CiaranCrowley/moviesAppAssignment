@@ -105,8 +105,14 @@ export const getPeople = () => {
   .then(json => json.results);
 }
 
-export const getPersonDetails = () => {
+export const getPersonDetails = id => {
   return fetch(
-    `https://api.themoviedb.org/3/person/{person_id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-  )
+    `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+  ).then(res => res.json());
 }
+
+// export const getMovie = id => {
+//   return fetch(
+//     `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+//   ).then(res => res.json());
+// };
