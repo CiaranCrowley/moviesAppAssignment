@@ -1,5 +1,6 @@
 let movies;
 let tvShows;
+let people;
 const movieId = 497582; // Enola Holmes movie id
 const showId = 82856; //Mandalorian Id
 const reviewId = "5f69e4d0cee2f6003633becf" //Enola Holmes first full review
@@ -38,7 +39,7 @@ describe("Navigation", () => {
       tvShows = response.results;
     });
     cy.request(
-      `https://api.themoviedb.org/3/movie/${showId}/reviews?api_key=${Cypress.env(
+      `https://api.themoviedb.org/3/tv/${showId}/reviews?api_key=${Cypress.env(
         "TMDB_KEY"
       )}`
     )
@@ -47,6 +48,16 @@ describe("Navigation", () => {
       console.log(response);
       reviews = response.results;
     });
+    cy.request(
+      `https://api.themoviedb.org/3/person/popular?api_key=${Cypress.env(
+        "TMDB_KEY"
+      )}&language=en-US&include_adult=false&include_video=false&page=1`
+    )
+    .its("body")
+    .then((response) => {
+      people = response.results;
+    });
+
   });
 
 
@@ -172,7 +183,7 @@ describe("Navigation", () => {
       cy.get(".dropdown").contains("TV Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Rated").click();
       cy.url().should("include", `/top_rated`);
       cy.get("h2").contains("Top rated Shows");
-      cy.get(".dropdown").contains("TV Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Your Favourite Tv Shows").click();
+      cy.get(".dropdown").contains("TV Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Your Favourite Tv Show").click();
       cy.url().should("not.include", `/top_rated`);
       cy.get("h2").contains("Favorite Tv Shows");
     });
@@ -216,4 +227,59 @@ describe("Navigation", () => {
       cy.get("h2");
     });
   });
+
+  //  ********************    END OF TV TESTS ********************
+
+  //  ********************    PEOPLE  NAVIGATION  TESTS    ********************
+
+  describe("From the Popular Actors page", () => {
+    beforeEach(() => {
+      cy.visit("/");
+      cy.wait(1000);
+    });
+    it("should navigate to the actor details page and change browser URL", () => {
+      cy.wait(200);
+      cy.get(".dropdown").contains("Actors").click().get('.dropdown-menu').get(".dropdown-item").contains("Popular").click();
+      cy.get(".card").eq(1).find("img").click();
+      cy.url().should("include", `/person/${people[1].id}`);
+      cy.get("h2").contains(people[1].name);
+    });
+    it("should allow navigation from site header", () => {
+      cy.get(".dropdown").contains("Actors").click().get('.dropdown-menu').get(".dropdown-item").contains("Popular").click();
+      cy.url().should("include", `/people`);
+      cy.get("h2").contains("Popular Actors");
+      cy.get(".dropdown").contains("Actors Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Your Favourite Actors").click();
+      cy.url().should("not.include", `/top_rated`);
+      cy.get("h2").contains("Favorite Actors");
+    });
+  });
+
+  describe("From the Actors Details page ", () => {
+    beforeEach(() => {
+      cy.get(".dropdown").contains("Actors Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Popular").click();
+      cy.wait(200);
+      cy.get(".card").eq(0).find("img").click();
+    });
+    it("should find h2 with actors name and use the back button", () => {
+      cy.get("h2").contains(people[0].name);
+      cy.get("svg[data-icon=arrow-circle-left]").click({force: true});
+      cy.url().should("not.include", `/${people[0].id}`);
+    });
+  });
+
+  describe("Add a favorite actor ", () => {
+    beforeEach(() => {
+      cy.get(".dropdown").contains("Actors Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Popular").click();
+      cy.wait(200);
+    });
+    it("should add an actor to favorites list and go back using return button", () => {
+      cy.get(".card").eq(0).find("button").click();
+      cy.get(".dropdown").contains("Actors Menu").click().get('.dropdown-menu').get(".dropdown-item").contains("Favourite").click();
+      cy.get(".card").eq(0).find("button").contains("Return to Popular").click();
+      cy.url().should("not.include", `/favoriteActors`);
+      cy.get("h2").contains("Popular Actors");
+    });
+  });
+
+  //  ********************    END OF PEOPLE TESTS    ********************
 });

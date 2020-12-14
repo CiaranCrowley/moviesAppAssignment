@@ -12,7 +12,7 @@ const PeoplePage = () => {
 
     return(
         <PageTemplate
-            name="Popular People"
+            name="Popular Actors"
             people={popularPeople}
             action={person => {
                 return <AddFavoriteActorButton person={person} />;
