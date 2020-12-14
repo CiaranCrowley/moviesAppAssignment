@@ -39,6 +39,7 @@ describe("tv Details Page", () => {
   });
 
   it("should display the tv's details", () => {
+    cy.wait(200);
     cy.get(".card").eq(2).find("img").click();
     cy.get("h4").contains("Overview");
     cy.get("h4").next().contains(tv.overview);
