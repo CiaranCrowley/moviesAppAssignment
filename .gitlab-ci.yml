@@ -25,6 +25,7 @@ install_dependencies:
   stage: install
   only:
     - staging
+    - master
   script:
     - npm ci
 
