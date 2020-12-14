@@ -6,7 +6,7 @@ const BackToPeopleList = ({ person }) => {
   return (
     <Button variant="primary">
     <Link className="nav-link text-white " to="/people">
-      People List
+      Return to Popular Actors
     </Link>
     </Button>
   );
