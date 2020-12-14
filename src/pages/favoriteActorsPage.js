@@ -2,7 +2,7 @@ import React, {useContext, lazy} from "react";
 import {PeopleContext} from '../contexts/peopleContext'
 
 const PageTemplate = lazy(() => import("../components/templatePeopleListPage"));
-const AddReviewButton = lazy(() => import("../components/buttons/addReview"));
+const BackToPeopleList = lazy(() => import("../components/buttons/backToPeopleList"));
 
 const FavoriteMoviesPage = () => {
   const context = useContext(PeopleContext);
@@ -11,7 +11,7 @@ const FavoriteMoviesPage = () => {
     <PageTemplate
       people={favoriteActor}
       name={"Favorite Actors"}
-      action={person => <AddReviewButton person={person} />}
+      action={person => <BackToPeopleList person={person} />}
     />
   );
 };
