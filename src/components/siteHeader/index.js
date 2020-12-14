@@ -35,6 +35,9 @@ const SiteHeader = () => {
             <NavDropdown.Item className="text-black my-auto" as={Link} to="/tv/favoriteShows">Your Favourite Tv Shows </NavDropdown.Item>
             <NavDropdown.Item className="text-black my-auto" as={Link} to="/tv/tvWatchlist">Watch List</NavDropdown.Item>
           </NavDropdown>
+
+          {/* PEOPLE */}
+          <Nav.Link className="text-white my-auto" as={Link} to="/people">Popular Actors</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

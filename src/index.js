@@ -5,26 +5,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 import SiteHeader from "./components/siteHeader";
 
-//import HomePage from "./pages/homePage";
-//import FavoriteMoviesPage from "./pages/favoritesMoviesPage" ;
-//import MoviePage from "./pages/movieDetailsPage";
-//import MovieReviewPage from "./pages/movieReviewPage";
-//import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
-//import MoviesContextProvider from "./contexts/moviesContext";
-//import GenresContextProvider from "./contexts/genresContext";
-//import AddMovieReviewPage from "./pages/addMovieReviewPage";
-//import WatchListPage from "./pages/watchListPage";
-//import PopularMoviesPage from "./pages/popularMovies";
-//import PopularMoviesContextProvider from "./contexts/popularMoviesContext";
-//import TvShowsPage from "./pages/tvShowsPage";
-//import TvShowsContextProvider from "./contexts/tvContext";
-//import TvPage from "./pages/tvDetailsPage";
-//import TvReviewPage from "./pages/tvReviewPage";
-//import TopRatedTv from "./pages/topRatedTvPage";
-//import FavoriteTvShowsPage from "./pages/favoriteTvShowsPage";
-//import AddTvShowReviewPage from "./pages/addTvShowReviewPage";
-//import TvWatchlistPage from "./pages/tvWatchlistPage";
-
 const HomePage = lazy(() => import("./pages/homePage"));
 const FavoriteMoviesPage = lazy(() => import("./pages/favoritesMoviesPage"));
 const MoviePage = lazy(() => import("./pages/movieDetailsPage"));
@@ -44,6 +24,9 @@ const TopRatedTv = lazy(() => import("./pages/topRatedTvPage"));
 const FavoriteTvShowsPage = lazy(() => import("./pages/favoriteTvShowsPage"));
 const AddTvShowReviewPage = lazy(() => import("./pages/addTvShowReviewPage"));
 const TvWatchlistPage = lazy(() => import("./pages/tvWatchlistPage"));
+const PeopleContextPropvider = lazy(() => import("./contexts/peopleContext"));
+const PopularPeoplePage = lazy(() => import("./pages/peoplePage"));
+const PersonDetailsPage = lazy(() => import("./pages/personDetailsPage"));
 
 const App = () => {
   return (
@@ -55,26 +38,30 @@ const App = () => {
             <MoviesContextProvider>
               <PopularMoviesContextProvider>
                 <TvShowsContextProvider>
-                  <GenresContextProvider>
-                    <Switch>
-                      <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-                      <Route exact path="/tvShowReviews/tvReviewForm" component={AddTvShowReviewPage} />
-                      <Route path="/reviews/:id" component={MovieReviewPage} />
-                      <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-                      <Route exact path="/movies/watchList" component={WatchListPage} />
-                      <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
-                      <Route exact path="/movies/popular" component={PopularMoviesPage} />
-                      <Route exact path="/tv" component={TvShowsPage} />
-                      <Route exact path="/tvReviews/:id" component={TvReviewPage} />
-                      <Route exact path="/tv/top_rated" component={TopRatedTv} />
-                      <Route exact path="/tv/favoriteShows" component={FavoriteTvShowsPage} />.
-                      <Route exact path="/tv/tvWatchlist" component={TvWatchlistPage} />,
-                      <Route path="/movies/:id" component={MoviePage} />
-                      <Route path="/tv/:id" component={TvPage} />
-                      <Route path="/" component={HomePage} />
-                      <Redirect from="*" to="/" />
-                    </Switch>
-                  </GenresContextProvider>
+                  <PeopleContextPropvider>
+                    <GenresContextProvider>
+                      <Switch>
+                        <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+                        <Route exact path="/tvShowReviews/tvReviewForm" component={AddTvShowReviewPage} />
+                        <Route path="/reviews/:id" component={MovieReviewPage} />
+                        <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+                        <Route exact path="/movies/watchList" component={WatchListPage} />
+                        <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+                        <Route exact path="/movies/popular" component={PopularMoviesPage} />
+                        <Route exact path="/tv" component={TvShowsPage} />
+                        <Route exact path="/tvReviews/:id" component={TvReviewPage} />
+                        <Route exact path="/tv/top_rated" component={TopRatedTv} />
+                        <Route exact path="/tv/favoriteShows" component={FavoriteTvShowsPage} />
+                        <Route exact path="/tv/tvWatchlist" component={TvWatchlistPage} />
+                        <Route path="/people" component={PopularPeoplePage} />
+                        <Route path="/movies/:id" component={MoviePage} />
+                        <Route path="/tv/:id" component={TvPage} />
+                        <Route path="/person/:id" component={PersonDetailsPage} />
+                        <Route path="/" component={HomePage} />
+                        <Redirect from="*" to="/" />
+                      </Switch>
+                    </GenresContextProvider>
+                  </PeopleContextPropvider>
                 </TvShowsContextProvider>
               </PopularMoviesContextProvider>
             </MoviesContextProvider>

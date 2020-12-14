@@ -66,10 +66,10 @@ describe("Tv Page ", () => {
       });
     });
     
-    describe("By movie genre", () => {
+    describe("By show genre", () => {
       it("should display tv shows with the specified genre only", () => {
-        const selectedGenreId = 35;
-        const selectedGenreText = "Comedy";
+        const selectedGenreId = 80;
+        const selectedGenreText = "Crime";
         const matchingShows = filterByGenre(tvShows, selectedGenreId);
         cy.get("select").select(selectedGenreText); 
         cy.get(".card").should("have.length", matchingShows.length);
@@ -82,9 +82,9 @@ describe("Tv Page ", () => {
     });
     describe("by genre and name", () => {
       it("should display tv shows with the specified genre and name only", () => {
-        const searchString = "t";
-        const selectedGenreId = 35;
-        const selectedGenreText = "Comedy";
+        const searchString = "i";
+        const selectedGenreId = 80;
+        const selectedGenreText = "Crime";
         const matchingShows = filterByName(tvShows, searchString) && filterByGenre(tvShows, selectedGenreId);
         cy.get("input").clear().type(searchString);
         cy.get("select").select(selectedGenreText);
