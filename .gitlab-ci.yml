@@ -25,7 +25,7 @@ install_dependencies:
   stage: install
   only:
     - staging
-    - master
+    - main
   script:
     - npm ci
 
@@ -33,6 +33,7 @@ bundle_app:
   stage: build
   only:
     - staging
+    - main
   artifacts:
     paths:
       - build/
@@ -43,6 +44,7 @@ e2etest:
     stage: test
     only:
       - staging
+      - main
     before_script:
       - npm install -g http-server
       - npm install cypress
