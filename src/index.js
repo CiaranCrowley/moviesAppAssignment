@@ -27,6 +27,7 @@ const TvWatchlistPage = lazy(() => import("./pages/tvWatchlistPage"));
 const PeopleContextPropvider = lazy(() => import("./contexts/peopleContext"));
 const PopularPeoplePage = lazy(() => import("./pages/peoplePage"));
 const PersonDetailsPage = lazy(() => import("./pages/personDetailsPage"));
+const FavoriteActorsPage = lazy(() => import("./pages/favoriteActorsPage"));
 
 const App = () => {
   return (
@@ -52,6 +53,7 @@ const App = () => {
                         <Route exact path="/tvReviews/:id" component={TvReviewPage} />
                         <Route exact path="/tv/top_rated" component={TopRatedTv} />
                         <Route exact path="/tv/favoriteShows" component={FavoriteTvShowsPage} />
+                        <Route exact path="/people/favoriteActors" component={FavoriteActorsPage} />
                         <Route exact path="/tv/tvWatchlist" component={TvWatchlistPage} />
                         <Route path="/people" component={PopularPeoplePage} />
                         <Route path="/movies/:id" component={MoviePage} />
