@@ -70,8 +70,8 @@ Name: Ciarán Crowley
 <!-- ![][actorsMenu]
 >Shows the Actors Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages. -->
 
-<!-- ![][movieDetail]
->Shows detailed information on a movie.  Clicking the 'Show Reviews' button will display extracts from critic reviews. -->
+![][movieDetail]
+>Shows detailed information on a movie.  Clicking the 'Show Reviews' button will display extracts from critic reviews.
 
 <!-- ![][tvDetail]
 >Shows detailed information on a tv show.  Clicking the 'Show Reviews' button will display extracts from critic reviews. -->
@@ -79,8 +79,8 @@ Name: Ciarán Crowley
 <!-- ![][personDetail]
 >Shows detailed information on an actor.  Clicking the 'Return to Popular Actors" button will take you back to the Popular Actors Page. -->
 
-<!-- ![][review]
->Shows the full text for a movie review.  -->
+![][review]
+>Shows the full text for a movie review. 
 
 ## Routing.
 
