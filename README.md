@@ -58,7 +58,7 @@ Name: Ciarán Crowley
 
 ...... Insert screenshots of the new/modified views you have added to the Movies Fan app. Include a caption for each one clearly stating its purpose and any user interaction it supports ........
 
-!["New Nav Bar"](/public/newNavBar.png)
+![](/public/newNavBar.png)
 >Shows the new nav bar.  This was introduced to declutter the original nav bar as it was getting hard to navigate with so many pages.  Clicking home will take you to "/", and the other options will open drop down menus containing links to related information
 
 ![](/public/moviesMenu.png)
@@ -107,10 +107,10 @@ Name: Ciarán Crowley
 
 .... Use screenshots to illustrate where data hyperlinking is present in your views - include captions.
 
-![][cardLink]
+![](/public/cardlink.png)
 > Clicking a card causes the display of that movie's details.
 
-![][reviewLink]
+![](/public/reviewlink.png)
 >Clicking the 'Full Review' for a review extract will display the full text of the review
 
 ## Independent learning (If relevant).
