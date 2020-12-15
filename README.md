@@ -61,23 +61,23 @@ Name: Ciarán Crowley
 ![][newNavBar]
 >Shows the new nav bar.  This was introduced to declutter the original nav bar as it was getting hard to navigate with so many pages.  Clicking home will take you to "/", and the other options will open drop down menus containing links to related information
 
-![][moviesMenu]
->Shows the Movies Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages.
+<!-- ![][moviesMenu]
+>Shows the Movies Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages. -->
 
-![][tvMenu]
->Shows the TV Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages.
+<!-- ![][tvMenu]
+>Shows the TV Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages. -->
 
-![][actorsMenu]
->Shows the Actors Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages.
+<!-- ![][actorsMenu]
+>Shows the Actors Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages. -->
 
 <!-- ![][movieDetail]
 >Shows detailed information on a movie.  Clicking the 'Show Reviews' button will display extracts from critic reviews. -->
 
-![][tvDetail]
->Shows detailed information on a tv show.  Clicking the 'Show Reviews' button will display extracts from critic reviews.
+<!-- ![][tvDetail]
+>Shows detailed information on a tv show.  Clicking the 'Show Reviews' button will display extracts from critic reviews. -->
 
-![][personDetail]
->Shows detailed information on an actor.  Clicking the 'Return to Popular Actors" button will take you back to the Popular Actors Page.
+<!-- ![][personDetail]
+>Shows detailed information on an actor.  Clicking the 'Return to Popular Actors" button will take you back to the Popular Actors Page. -->
 
 <!-- ![][review]
 >Shows the full text for a movie review.  -->
