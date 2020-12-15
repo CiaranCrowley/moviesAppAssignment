@@ -84,7 +84,7 @@ Name: Ciarán Crowley
 
 ## Routing.
 
-...... Insert a list of the additional routes supported by your Movies Fan app. If relevant, specify which of the routes require authentication, i.e. protected/private.
+...... List of the additional routes supported by your Movies Fan app.
 
 + / (public) - the home page.  Displays movies available on TMDB.
 + /movies/favorites (protected) - displays the user's favorite movies selection.
@@ -110,6 +110,15 @@ Name: Ciarán Crowley
 ![](/public/cardlink.png)
 > Clicking a card causes the display of that movie's details.
 
+![](/public/tvCardlink.png)
+>Clicking a card causes the display of that tv shows details.
+
+![](public/personCardlink.png)
+>Clicking a card causes the display of that persons details.
+
+![](/public/tvReviewlink.png)
+>Clicking the 'Full Review' for a review extract will display the full text of the review
+
 ![](/public/reviewlink.png)
 >Clicking the 'Full Review' for a review extract will display the full text of the review
 
@@ -125,3 +134,6 @@ Name: Ciarán Crowley
 [reviewLink]: ./public/reviewLink.png
 [cardLink]: ./public/cardLink.png
 [stories]: ./public/storybook.png
+[dropdowns]: ./public/tvMenu.png
+[person]: ./public/personCardlink.png
+[tv]: ./public/tvCardlink.png
