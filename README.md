@@ -1,28 +1,50 @@
 # Assignment 1 - ReactJS app.
 
-Name: ... your name ...
+Name: Ciarán Crowley
 
 ## Features.
 
 ...... A bullet-point list of the ADDITIONAL user features you have implemented for the  Movies Fan app ......,
  
- + Feature 1 - .... a statement of its purpose/objective ..... 
- + Feature 2 - .......
- + Feature 3 = ......
- + etc
- + etc
+ + Feature 1 - Popular Movies:  Displays the movies that are trending on TMDB.
+ + Feature 2 - Latest Movies:  Displays the movie most recently added to TMDB.  The latest movie is often missing information as well as its poster due.
+ + Feature 3 - Tv Shows:  Displays Tv Shows available on TMDB.  Includes the ability to add favourite tv shows.
+ + Feature 4 - Top rated Shows:  Displays the current highest rated shows available on TMDB.  Includes ability to add to a watch list.
+ + Feature 5 - People:  Popular Actors page displays the current most popular actors on TMDB.  Includes ability to add favourite actors.
+ + Feature 6 - React Nav Bar & Drop Down Menus: Added to declutter the nav bar.
 
 ## Setup requirements (If required).
 
-...... A brief explanation of any non-standard setup steps necessary to run your app/client locally (after cloning the repo) ........
++ npm install
++ npm install cypress --save-dev
++ npm install --save-dev start-server-and-test@1.10.6
++ npm install react-bootstrap bootstrap
++ npm install -g http-server
++ npm run (Google Chrome is required.  You may need to refresh the web app in your browser to get a display)
 
 ## API Data Model.
 
 ..... List the additional TMDB endpoints used in your assignment, e.g.
 
+....  Movie Endpoints  ....
 + https://api.themoviedb.org/3/movie/${id} - get detailed information on a specific movie. 
 + https://api.themoviedb.org/3/genre/movie/list - get a list of movie genres
-+ .......
++ https://api.themoviedb.org/3/discover/movie - get all movies on TMDB
++ https://api.themoviedb.org/3/movie/${id}/reviews - get reviews for a specific movie
++ https://api.themoviedb.org/3/movie/upcoming - get all upcoming movies on TMDB
++ https://api.themoviedb.org/3/movie/popular - get popular movies on TMDB
++ https://api.themoviedb.org/3/movie/latest = get latest movie added to TMDB
+
+....  Tv Endpoints  ....
++ https://api.themoviedb.org/3/discover/tv - get all tv shows on TMDB
++ https://api.themoviedb.org/3/tv/${id} - get detailed information on a specific tv show
++ https://api.themoviedb.org/3/genre/tv/list - get a list of tv show genres
++ https://api.themoviedb.org/3/tv/${id} - get reviews for a specific tv show
++ https://api.themoviedb.org/3/tv/top_rated - get the current highest rated tv shows on TMDB
+
+....  People Endpoints  ....
++ https://api.themoviedb.org/3/person/popular - get all popular actors on TMDB
++ https://api.themoviedb.org/3/person/${id} - get detailed information on a specific actor
 
 ## App Design.
 

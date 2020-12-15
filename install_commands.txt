@@ -1,8 +1,10 @@
 npm install
 npm install cypress --save-dev
 npm install --save-dev start-server-and-test@1.10.6
-npx cypress run --record --key ...use your generated key.....
+npm install react-bootstrap bootstrap
 npm install -g http-server
+
+***    NON ESSENTIALS    ***
 npm run build
 http-server ./build -p 8080
 npm install --save-dev  source-map-explorer@2.5.0
