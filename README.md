@@ -58,20 +58,50 @@ Name: Ciarán Crowley
 
 ...... Insert screenshots of the new/modified views you have added to the Movies Fan app. Include a caption for each one clearly stating its purpose and any user interaction it supports ........
 
-![][movieDetail]
->Shows detailed information on a movie. Clicking the 'Show Reviews' button will display extracts from critic reviews.
+![][newNavBar]
+>Shows the new nav bar.  This was introduced to declutter the original nav bar as it was getting hard to navigate with so many pages.  Clicking home will take you to "/", and the other options will open drop down menus containing links to related information
 
-![][review]
->Shows the full text for a movie review. 
+![][moviesMenu]
+>Shows the Movies Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages.
+
+![][tvMenu]
+>Shows the TV Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages.
+
+![][actorsMenu]
+>Shows the Actors Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages.
+
+<!-- ![][movieDetail]
+>Shows detailed information on a movie.  Clicking the 'Show Reviews' button will display extracts from critic reviews. -->
+
+![][tvDetail]
+>Shows detailed information on a tv show.  Clicking the 'Show Reviews' button will display extracts from critic reviews.
+
+![][personDetail]
+>Shows detailed information on an actor.  Clicking the 'Return to Popular Actors" button will take you back to the Popular Actors Page.
+
+<!-- ![][review]
+>Shows the full text for a movie review.  -->
 
 ## Routing.
 
 ...... Insert a list of the additional routes supported by your Movies Fan app. If relevant, specify which of the routes require authentication, i.e. protected/private.
 
++ / (public) - the home page.  Displays movies available on TMDB.
 + /movies/favorites (protected) - displays the user's favorite movies selection.
 + /reviews/:id (public) - displays the full text of a movie review.
-+ etc.
-+ etc.
++ /movies/watchList (protected) - displays the movies the user has added to their watch list.
++ /movies/upcoming (public) - displays upcoming movies.
++ /movies/popular (public) - displays the current trending movies on TMDB. 
++ /movies/:id (public) - displays detailed information for a specific movie.
++ /tv (public) - displays the tv shows available on TMDB.
++ /tv/:id - displays detailed information for a specific tv show.
++ /tv/reviews/:id (public) - displays reviews for a specific tv show.
++ /tv/topRated (public) - displays the top rated tv shows on TMDB.
++ /tv/favoriteShows (protected) - displays the users favorite tv show selection.
++ /tv/watchlist (protected) - displays the users tv show watch list.
++ /people/favoriteActors (protected) - displays the users favourite actor selection.
++ /people (public) - displays the popular actors on TMDB.
++ /person/:id (public) - display's detailed information on a specific actor.
 
 ### Data hyperlinking.
 
