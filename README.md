@@ -52,7 +52,7 @@ Name: Ciarán Crowley
 
 ....... Insert a screenshot from the Storybook UI, hi-light stories relating to new/modified components you developed - see example screenshot below] .......
 
-![][storybook]
+![][stories]
 
 ### UI Design.
 
