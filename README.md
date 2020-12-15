@@ -50,8 +50,6 @@ Name: Ciarán Crowley
 
 ### Component catalogue (If required).
 
-....... Insert a screenshot from the Storybook UI, hi-light stories relating to new/modified components you developed - see example screenshot below] .......
-
 ![][stories]
 
 ### UI Design.
