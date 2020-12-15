@@ -20,7 +20,7 @@ Name: Ciarán Crowley
 + npm install --save-dev start-server-and-test@1.10.6
 + npm install react-bootstrap bootstrap
 + npm install -g http-server
-+ npm run (Google Chrome is required.  You may need to refresh the web app in your browser to get a display)
++ npm start (Google Chrome is required.  You may need to refresh the web app in your browser to get a display)
 
 ## API Data Model.
 
