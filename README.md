@@ -126,12 +126,20 @@ Name: Ciarán Crowley
 
 ---------------------------------
 
-[model]: (/data.jpg)
+![model]: (/data.jpg)
 !["movieDetail"](/public/movieDetail.png)
+>Movie Details
 !["review"](/public/review.png)
+>Reviews
 !["reviewLink"](/public/reviewlink.png)
+>Review Hyperlink
 !["cardLink"](/public/cardlink.png)
+>Cards
 !["stories"](/public/storybook.png)
+>Storybook
 !["dropdowns"](/public/tvMenu.png)
+>React Bootstrap Drop Down Menus
 !["person"](/public/personCardlink.png)
+>People Cards
 !["tv"](/public/tvCardlink.png)
+>Tv Cards
