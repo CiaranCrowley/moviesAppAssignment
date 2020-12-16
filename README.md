@@ -127,11 +127,11 @@ Name: Ciarán Crowley
 ---------------------------------
 
 <!-- [model]: (/data.jpg) -->
-![movieDetail]: (/public/movieDetail.png)
-![review]: (/public/review.png)
-![reviewLink]: (/public/reviewLink.png)
-![cardLink]: (/public/cardLink.png)
-![stories]: (/public/storybook.png)
-![dropdowns]: /public/tvMenu.png
-![person]: (/public/personCardlink.png)
-![tv]: (/public/tvCardlink.png)
+![movieDetail](/public/movieDetail.png)
+![review](/public/review.png)
+![reviewLink](/public/reviewLink.png)
+![cardLink](/public/cardLink.png)
+![stories](/public/storybook.png)
+![dropdowns](/public/tvMenu.png)
+![person](/public/personCardlink.png)
+![tv](/public/tvCardlink.png)
