@@ -126,7 +126,7 @@ Name: Ciarán Crowley
 
 ---------------------------------
 
-![model]: (/data.jpg)
+<!-- ![model]: (/data.jpg) -->
 !["movieDetail"](/public/movieDetail.png)
 >Movie Details
 !["review"](/public/review.png)
