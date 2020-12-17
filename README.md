@@ -50,7 +50,7 @@ Name: Ciarán Crowley
 
 ### Component catalogue (If required).
 
-![][stories]
+![](/public/storybook.png)
 
 ### UI Design.
 
@@ -68,7 +68,7 @@ Name: Ciarán Crowley
 ![](/public/actorsMenu.png)
 >Shows the Actors Menu Drop Down menu.  Clicking on any of the links inside will take you to the corresponding pages.
 
-![][movieDetail]
+![](/public/movieDetail.png)
 >Shows detailed information on a movie.  Clicking the 'Show Reviews' button will display extracts from critic reviews.
 
 ![](/public/tvDetail.png)
@@ -77,7 +77,7 @@ Name: Ciarán Crowley
 ![](/public/personDetail.png)
 >Shows detailed information on an actor.  Clicking the 'Return to Popular Actors" button will take you back to the Popular Actors Page.
 
-![][review]
+![](/public/review.png)
 >Shows the full text for a movie review. 
 
 ## Routing.
